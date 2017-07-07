@@ -1,26 +1,159 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XBZ-8e-QBd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Прогноз погоды-->
+        <scene sceneID="Mom-cP-kss">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Прогноз погоды" id="wtb-EY-uKF" customClass="ForecastViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="JTL-2J-nlJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="43l-cB-bJx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="o8i-sR-KxX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-nO-yIz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RRj-Oc-12j">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RRj-Oc-12j" id="u52-em-6gJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LGc-nO-yIz" secondAttribute="trailing" id="N4m-gu-IOe"/>
+                            <constraint firstItem="LGc-nO-yIz" firstAttribute="top" secondItem="JTL-2J-nlJ" secondAttribute="bottom" id="PWI-me-UdK"/>
+                            <constraint firstItem="LGc-nO-yIz" firstAttribute="leading" secondItem="o8i-sR-KxX" secondAttribute="leading" id="WaM-zD-N2e"/>
+                            <constraint firstItem="43l-cB-bJx" firstAttribute="top" secondItem="LGc-nO-yIz" secondAttribute="bottom" id="Ykd-yD-fiC"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Прогноз погоды" image="calendar.png" id="hmM-vd-4dm"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ss-Is-Uq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="649" y="-249"/>
+        </scene>
+        <!--Карта погоды-->
+        <scene sceneID="W0d-mp-QWg">
+            <objects>
+                <viewController title="Карта погоды" id="cIj-ZM-N2Y" customClass="WeatherMapViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="027-kq-XL5"/>
+                        <viewControllerLayoutGuide type="bottom" id="wYV-lC-Tgn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PlB-Wa-vQK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Yr-t5-eQR">
+                                <rect key="frame" x="0.0" y="64" width="374" height="538"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Yr-t5-eQR" firstAttribute="centerX" secondItem="PlB-Wa-vQK" secondAttribute="centerX" id="IXL-hN-Q04"/>
+                            <constraint firstItem="4Yr-t5-eQR" firstAttribute="top" secondItem="027-kq-XL5" secondAttribute="bottom" id="Wfn-hw-I8k"/>
+                            <constraint firstItem="4Yr-t5-eQR" firstAttribute="centerY" secondItem="PlB-Wa-vQK" secondAttribute="centerY" id="aTW-wL-bVN"/>
+                            <constraint firstItem="4Yr-t5-eQR" firstAttribute="leading" secondItem="PlB-Wa-vQK" secondAttribute="leading" id="dJE-B7-0Uw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Карта погоды" image="map.png" id="CAd-7v-elU"/>
+                    <connections>
+                        <outlet property="weatherMapView" destination="4Yr-t5-eQR" id="s1V-kC-Bzm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUs-ay-9fL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="512"/>
+        </scene>
+        <!--Погода сейчас-->
+        <scene sceneID="CW2-kl-w5k">
+            <objects>
+                <viewController title="Погода сейчас" id="6EU-rz-FIG" customClass="CurrentWeatherViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Tp-Ux-41n"/>
+                        <viewControllerLayoutGuide type="bottom" id="EhC-43-dQ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8O1-6j-UsI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Погода сейчас" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7I-eC-a1E">
+                                <rect key="frame" x="127.5" y="323" width="119.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z7I-eC-a1E" firstAttribute="centerX" secondItem="8O1-6j-UsI" secondAttribute="centerX" id="WJs-kW-kEY"/>
+                            <constraint firstItem="Z7I-eC-a1E" firstAttribute="centerY" secondItem="8O1-6j-UsI" secondAttribute="centerY" id="isT-iR-XrP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Погода сейчас" image="partly_cloudy.png" id="EIe-6w-XGn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPY-dN-88R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="-994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ICH-rL-kLh">
+            <objects>
+                <navigationController id="XBZ-8e-QBd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QH1-6C-Sbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sjk-Nh-MxS" kind="relationship" relationship="rootViewController" id="4QB-QH-lQE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcs-tW-Wrd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="-249"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="qeB-2B-Cna">
+            <objects>
+                <tabBarController id="sjk-Nh-MxS" customClass="TabBarViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0qh-G0-wYa"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="d4T-j9-1Xr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6EU-rz-FIG" kind="relationship" relationship="viewControllers" id="NXs-Xd-9ix"/>
+                        <segue destination="wtb-EY-uKF" kind="relationship" relationship="viewControllers" id="iV2-wV-jg2"/>
+                        <segue destination="cIj-ZM-N2Y" kind="relationship" relationship="viewControllers" id="MTx-gR-92a"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3v-Uh-UTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="-248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar.png" width="25" height="25"/>
+        <image name="map.png" width="25" height="25"/>
+        <image name="partly_cloudy.png" width="30" height="30"/>
+    </resources>
 </document>

@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315289A81F1036FF00EDB2FD /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289A71F10369900EDB2FD /* calendar@2x.png */; };
+		315289A91F10370100EDB2FD /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289A51F10369900EDB2FD /* map@2x.png */; };
+		315289AA1F10370400EDB2FD /* partly_cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289A61F10369900EDB2FD /* partly_cloudy@2x.png */; };
 		316736E61F10244B00D554D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316736E51F10244B00D554D7 /* AppDelegate.swift */; };
-		316736E81F10244B00D554D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316736E71F10244B00D554D7 /* ViewController.swift */; };
 		316736EB1F10244B00D554D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316736E91F10244B00D554D7 /* Main.storyboard */; };
 		316736EE1F10244B00D554D7 /* OpenWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 316736EC1F10244B00D554D7 /* OpenWeather.xcdatamodeld */; };
 		316736F01F10244B00D554D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316736EF1F10244B00D554D7 /* Assets.xcassets */; };
 		316736F31F10244B00D554D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316736F11F10244B00D554D7 /* LaunchScreen.storyboard */; };
 		316736FE1F10244B00D554D7 /* OpenWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316736FD1F10244B00D554D7 /* OpenWeatherTests.swift */; };
+		3167370B1F1026B700D554D7 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167370A1F1026B700D554D7 /* CurrentWeatherViewController.swift */; };
+		3167370D1F1026E600D554D7 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167370C1F1026E600D554D7 /* ForecastViewController.swift */; };
+		3167370F1F10274300D554D7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167370E1F10274300D554D7 /* TabBarViewController.swift */; };
+		316737111F102A8E00D554D7 /* WeatherMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316737101F102A8E00D554D7 /* WeatherMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		315289A51F10369900EDB2FD /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
+		315289A61F10369900EDB2FD /* partly_cloudy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly_cloudy@2x.png"; sourceTree = "<group>"; };
+		315289A71F10369900EDB2FD /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		316736E21F10244B00D554D7 /* OpenWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316736E51F10244B00D554D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		316736E71F10244B00D554D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		316736EA1F10244B00D554D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		316736ED1F10244B00D554D7 /* OpenWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenWeather.xcdatamodel; sourceTree = "<group>"; };
 		316736EF1F10244B00D554D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 		316736F91F10244B00D554D7 /* OpenWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		316736FD1F10244B00D554D7 /* OpenWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTests.swift; sourceTree = "<group>"; };
 		316736FF1F10244B00D554D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3167370A1F1026B700D554D7 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
+		3167370C1F1026E600D554D7 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		3167370E1F10274300D554D7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		316737101F102A8E00D554D7 /* WeatherMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		311CE3B91F103382000C7EB0 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				311CE3BA1F103386000C7EB0 /* Modules */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		311CE3BA1F103386000C7EB0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		311CE3BB1F10338D000C7EB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				311CE3BC1F103396000C7EB0 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		311CE3BC1F103396000C7EB0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				315289A61F10369900EDB2FD /* partly_cloudy@2x.png */,
+				315289A71F10369900EDB2FD /* calendar@2x.png */,
+				315289A51F10369900EDB2FD /* map@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		316736D91F10244B00D554D7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +124,13 @@
 		316736E41F10244B00D554D7 /* OpenWeather */ = {
 			isa = PBXGroup;
 			children = (
+				311CE3B91F103382000C7EB0 /* PresentationLayer */,
+				311CE3BB1F10338D000C7EB0 /* Resources */,
 				316736E51F10244B00D554D7 /* AppDelegate.swift */,
-				316736E71F10244B00D554D7 /* ViewController.swift */,
+				3167370E1F10274300D554D7 /* TabBarViewController.swift */,
+				3167370A1F1026B700D554D7 /* CurrentWeatherViewController.swift */,
+				3167370C1F1026E600D554D7 /* ForecastViewController.swift */,
+				316737101F102A8E00D554D7 /* WeatherMapViewController.swift */,
 				316736E91F10244B00D554D7 /* Main.storyboard */,
 				316736EF1F10244B00D554D7 /* Assets.xcassets */,
 				316736F11F10244B00D554D7 /* LaunchScreen.storyboard */,
@@ -181,7 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				316736F31F10244B00D554D7 /* LaunchScreen.storyboard in Resources */,
+				315289A91F10370100EDB2FD /* map@2x.png in Resources */,
 				316736F01F10244B00D554D7 /* Assets.xcassets in Resources */,
+				315289A81F1036FF00EDB2FD /* calendar@2x.png in Resources */,
+				315289AA1F10370400EDB2FD /* partly_cloudy@2x.png in Resources */,
 				316736EB1F10244B00D554D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,9 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				316736E81F10244B00D554D7 /* ViewController.swift in Sources */,
 				316736EE1F10244B00D554D7 /* OpenWeather.xcdatamodeld in Sources */,
+				3167370D1F1026E600D554D7 /* ForecastViewController.swift in Sources */,
+				316737111F102A8E00D554D7 /* WeatherMapViewController.swift in Sources */,
 				316736E61F10244B00D554D7 /* AppDelegate.swift in Sources */,
+				3167370F1F10274300D554D7 /* TabBarViewController.swift in Sources */,
+				3167370B1F1026B700D554D7 /* CurrentWeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -356,7 +412,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -370,7 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -385,7 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenWeather.app/OpenWeather";
 			};
@@ -401,7 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenWeather.app/OpenWeather";
 			};
@@ -426,6 +482,7 @@
 				316737041F10244B00D554D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		316737051F10244B00D554D7 /* Build configuration list for PBXNativeTarget "OpenWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +491,7 @@
 				316737071F10244B00D554D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
