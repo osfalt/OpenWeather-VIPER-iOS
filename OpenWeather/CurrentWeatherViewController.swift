@@ -19,12 +19,24 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var dawnTimeLabel: UILabel!
-    @IBOutlet weak var duskTimeLabel: UILabel!
+    @IBOutlet weak var sunriseTimeLabel: UILabel!
+    @IBOutlet weak var sunsetTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let service = CurrentWeatherServiceImpl()
+        service.getCurrentWeather(byCityName: "Moscow") { (weather, error) in
+            
+            if error == nil {
+                guard let weather = weather else { return }
+                
+                self.temperatureLabel.text = "\(weather.temperature!)"
+                self.weatherLabel.text = "\(weather.description!)"
+            } else {
+                self.showErrorBanner(message: error!.localizedDescription, position: .top)
+            }
+        }
     }
 
 }

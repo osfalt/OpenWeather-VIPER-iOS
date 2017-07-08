@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Yr-t5-eQR">
-                                <rect key="frame" x="0.0" y="64" width="374" height="538"/>
+                                <rect key="frame" x="0.0" y="104" width="374" height="458"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,12 +323,12 @@
                     <tabBarItem key="tabBarItem" title="" id="EIe-6w-XGn"/>
                     <navigationItem key="navigationItem" title="Погода сейчас" id="I2y-vg-Z9Q"/>
                     <connections>
-                        <outlet property="dawnTimeLabel" destination="4nR-ma-noM" id="2X6-Fm-CkH"/>
-                        <outlet property="duskTimeLabel" destination="tRW-mo-rhF" id="uMs-M2-U9o"/>
                         <outlet property="flagImageView" destination="ocB-HY-joh" id="dLG-zs-MKp"/>
                         <outlet property="humidityLabel" destination="IHY-n9-m29" id="AXg-UZ-k2f"/>
                         <outlet property="pressureLabel" destination="9PT-tX-sb1" id="Jzn-fb-Oxx"/>
                         <outlet property="regionLabel" destination="aWK-E7-sFK" id="70Y-l5-nTn"/>
+                        <outlet property="sunriseTimeLabel" destination="4nR-ma-noM" id="TCa-zq-Xda"/>
+                        <outlet property="sunsetTimeLabel" destination="tRW-mo-rhF" id="MX4-ic-v5g"/>
                         <outlet property="temperatureLabel" destination="QVk-5M-0Jv" id="Fke-Id-gWb"/>
                         <outlet property="weatherImageView" destination="6Eg-S9-sBf" id="TUf-lA-TAA"/>
                         <outlet property="weatherLabel" destination="yjg-D5-cgu" id="8cF-wD-JgJ"/>
@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="649" y="-1035"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="qeB-2B-Cna">
             <objects>
-                <tabBarController id="sjk-Nh-MxS" customClass="TabBarViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="sjk-Nh-MxS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="0qh-G0-wYa"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="d4T-j9-1Xr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
