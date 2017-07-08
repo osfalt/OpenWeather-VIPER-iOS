@@ -10,8 +10,8 @@ import ObjectMapper
 
 struct Wind: Mappable {
     
-    var speed: Int?
-    var degree: Int?
+    var speed = 0
+    var degree = 0
     
     init?(map: Map) {
         mapping(map: map)

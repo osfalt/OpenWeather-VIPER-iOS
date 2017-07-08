@@ -12,22 +12,22 @@ struct CurrentWeather: Mappable {
     
     var description: String?
     var iconID: String?
-    var temperature: Double?
-    var temperatureMin: Double?
-    var temperatureMax: Double?
+    var temperature = 0.0
+    var temperatureMin = 0.0
+    var temperatureMax = 0.0
     var wind: Wind?
-    var pressure: Int?
-    var humidity: Int?
-    var sunrise: Int?
-    var sunset: Int?
+    var pressure = 0
+    var humidity = 0
+    var sunrise = 0
+    var sunset = 0
     
     init?(map: Map) {
         mapping(map: map)
     }
     
     mutating func mapping(map: Map) {
-        description <- map["weather.description"]
-        iconID <- map["weather.icon"]
+        description <- map["weather.0.description"]
+        iconID <- map["weather.0.icon"]
         temperature <- map["main.temp"]
         temperatureMin <- map["main.temp_min"]
         temperatureMax <- map["main.temp_max"]

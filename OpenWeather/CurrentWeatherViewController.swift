@@ -31,8 +31,13 @@ class CurrentWeatherViewController: UIViewController {
             if error == nil {
                 guard let weather = weather else { return }
                 
-                self.temperatureLabel.text = "\(weather.temperature!)"
+                self.temperatureLabel.text = "\(weather.temperature)"
                 self.weatherLabel.text = "\(weather.description!)"
+                self.windLabel.text = "\(weather.wind!.speed) м/c -> \(weather.wind!.degree)"
+                self.pressureLabel.text = "\(weather.pressure) мм рт.ст."
+                self.humidityLabel.text = "\(weather.humidity) %"
+                self.sunriseTimeLabel.text = "\(weather.sunrise)"
+                self.sunsetTimeLabel.text = "\(weather.sunset)"
             } else {
                 self.showErrorBanner(message: error!.localizedDescription, position: .top)
             }

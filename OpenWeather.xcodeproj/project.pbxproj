@@ -256,15 +256,6 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		315259C61F10EADB00C4190E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				317FF3F51F10EFBC00ACE87E /* CurrentWeather.swift */,
-				317FF3F91F10F3DF00ACE87E /* Wind.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		316736D91F10244B00D554D7 = {
 			isa = PBXGroup;
 			children = (
@@ -288,13 +279,13 @@
 		316736E41F10244B00D554D7 /* OpenWeather */ = {
 			isa = PBXGroup;
 			children = (
-				31E06AEE1F10FF6200A9E174 /* Extensions */,
-				31E06AE91F10FF1000A9E174 /* Utils */,
 				315259BA1F10E55A00C4190E /* DI */,
 				311CE3B91F103382000C7EB0 /* VIPER */,
 				31349E661F10D7460018B87C /* ServiceLayer */,
-				315259C61F10EADB00C4190E /* Models */,
+				31E06AF31F1109D400A9E174 /* Models */,
 				315259C31F10E79C00C4190E /* API */,
+				31E06AE91F10FF1000A9E174 /* Utils */,
+				31E06AEE1F10FF6200A9E174 /* Extensions */,
 				311CE3BB1F10338D000C7EB0 /* Resources */,
 				316736E51F10244B00D554D7 /* AppDelegate.swift */,
 				3167370A1F1026B700D554D7 /* CurrentWeatherViewController.swift */,
@@ -332,6 +323,15 @@
 				31E06AEF1F10FFC900A9E174 /* UIColor+Extension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		31E06AF31F1109D400A9E174 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				317FF3F51F10EFBC00ACE87E /* CurrentWeather.swift */,
+				317FF3F91F10F3DF00ACE87E /* Wind.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		921556896E0C8FD84891DD34 /* Pods */ = {

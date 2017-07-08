@@ -61,6 +61,10 @@ class BaseApiOperation: Operation {
     }
     
     override func main() {
+        performRequest()
+    }
+    
+    func performRequest() {
         
     }
     

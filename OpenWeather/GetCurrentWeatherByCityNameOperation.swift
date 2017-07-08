@@ -18,14 +18,11 @@ class GetCurrentWeatherByCityNameOperation: BaseApiOperation {
         self.cityName = cityName
     }
     
-    override func main() {
-        super.main()
-        requestGetCurrentWeather()
-    }
-    
-    private func requestGetCurrentWeather() {
+    override func performRequest() {
+        var params = ApiConst.defaultParams
+        params["q"] = cityName
         
-        let request: DataRequest = alamofireManager.request(ApiUrl.full(path: "v1/resource/get/\(cityName)"))
+        let request: DataRequest = alamofireManager.request(ApiUrl.full(path: "weather"), method: .get, parameters: params)
         
         request.validate(statusCode: ApiConst.validStatusCodeRange)
             .responseObject { (response: DataResponse<CurrentWeather>) in
