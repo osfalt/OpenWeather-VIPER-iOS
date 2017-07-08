@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (4.5.0)
+  - AlamofireObjectMapper (4.1.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 2.0)
+  - BRYXBanner (0.7.3)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - ObjectMapper (2.2.7)
+  - Reqres (2.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - Swinject (2.0.0)
+  - SwinjectStoryboard (1.0.0):
+    - Swinject (= 2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireObjectMapper (~> 4.0)
+  - BRYXBanner
+  - Crashlytics
+  - Fabric
+  - Reqres
+  - SDWebImage
+  - Swinject (~> 2.0.0)
+  - SwinjectStoryboard (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
+  BRYXBanner: bd26a91cb8a5826a8bc7687891043d287dd3ee53
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  Reqres: 7027a575c1539c9635ff11ecf04d49cdf30a2f0a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
+  SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
+
+PODFILE CHECKSUM: 75dbe76d62979dac0c3beee2fafa042b56e184e8
+
+COCOAPODS: 1.2.1
