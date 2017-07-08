@@ -18,8 +18,8 @@ struct CurrentWeather: Mappable {
     var wind: Wind?
     var pressure = 0
     var humidity = 0
-    var sunrise = 0
-    var sunset = 0
+    var sunrise: Date?
+    var sunset: Date?
     
     init?(map: Map) {
         mapping(map: map)
@@ -34,7 +34,7 @@ struct CurrentWeather: Mappable {
         wind <- map["wind"]
         pressure <- map["main.pressure"]
         humidity <- map["main.humidity"]
-        sunrise <- map["sys.sunrise"]
-        sunset <- map["sys.sunset"]
+        sunrise <- (map["sys.sunrise"], DateTransform())
+        sunset <- (map["sys.sunset"], DateTransform())
     }
 }

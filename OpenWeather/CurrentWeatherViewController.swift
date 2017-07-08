@@ -36,8 +36,8 @@ class CurrentWeatherViewController: UIViewController {
                 self.windLabel.text = "\(weather.wind!.speed) м/c -> \(weather.wind!.degree)"
                 self.pressureLabel.text = "\(weather.pressure) мм рт.ст."
                 self.humidityLabel.text = "\(weather.humidity) %"
-                self.sunriseTimeLabel.text = "\(weather.sunrise)"
-                self.sunsetTimeLabel.text = "\(weather.sunset)"
+                self.sunriseTimeLabel.text = "\(weather.sunrise!)"
+                self.sunsetTimeLabel.text = "\(weather.sunset!)"
             } else {
                 self.showErrorBanner(message: error!.localizedDescription, position: .top)
             }
