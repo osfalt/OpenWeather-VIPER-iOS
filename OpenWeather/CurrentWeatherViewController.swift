@@ -22,11 +22,15 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var sunriseTimeLabel: UILabel!
     @IBOutlet weak var sunsetTimeLabel: UILabel!
-    
     var refreshControl: UIRefreshControl!
+    
+    private var dateFormatter: DateFormatter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
         
         scrollView.alwaysBounceVertical = true
         refreshControl = UIRefreshControl()
@@ -41,6 +45,8 @@ class CurrentWeatherViewController: UIViewController {
     }
     
     private func requestGetWeather() {
+        windArrowImageView.transform = CGAffineTransform.identity
+        
         let service = CurrentWeatherServiceImpl()
         service.getCurrentWeather(byCityName: "Moscow") { (weather, error) in
             
@@ -49,11 +55,19 @@ class CurrentWeatherViewController: UIViewController {
                 
                 self.temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) ℃"
                 self.weatherLabel.text = "\(weather.description!)"
-                self.windLabel.text = "\(weather.wind!.speed) м/c -> \(weather.wind!.degree)"
+                self.windLabel.text = "\(weather.wind!.speed) м/c"
                 self.pressureLabel.text = "\(weather.pressure) мм рт.ст."
                 self.humidityLabel.text = "\(weather.humidity) %"
-                self.sunriseTimeLabel.text = "\(weather.sunrise!)"
-                self.sunsetTimeLabel.text = "\(weather.sunset!)"
+                self.sunriseTimeLabel.text = "\(self.dateFormatter.string(from: weather.sunrise!))"
+                self.sunsetTimeLabel.text = "\(self.dateFormatter.string(from: weather.sunset!))"
+                
+                // wind direction
+                let radians = (CGFloat(weather.wind!.degree) * CGFloat.pi) / 180
+                let rotatedTransform = self.windArrowImageView.transform.rotated(by: radians)
+                UIView.animate(withDuration: 1.2, delay: 0.2, options: [.curveEaseOut], animations: {
+                    self.windArrowImageView.transform = rotatedTransform
+                })
+                
             } else {
                 self.showErrorBanner(message: error!.localizedDescription, position: .top)
             }

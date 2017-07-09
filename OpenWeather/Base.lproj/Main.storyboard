@@ -138,10 +138,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_indicator_bold.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-J5-mj5">
-                                                        <rect key="frame" x="351" y="17" width="12" height="12"/>
+                                                        <rect key="frame" x="350" y="16.5" width="13" height="13"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iAV-J5-mj5" secondAttribute="height" multiplier="1:1" id="0ST-2n-mcW"/>
-                                                            <constraint firstAttribute="width" constant="12" id="ahN-84-KSv"/>
+                                                            <constraint firstAttribute="width" constant="13" id="ahN-84-KSv"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49r-rU-BMr" userLabel="Divider View">
