@@ -10,6 +10,7 @@ import UIKit
 
 class CurrentWeatherViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -27,20 +28,26 @@ class CurrentWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.alwaysBounceVertical = true
         refreshControl = UIRefreshControl()
-        
+        refreshControl.addTarget(self, action: #selector(actionRefreshWeather), for: .valueChanged)
+        scrollView.addSubview(refreshControl)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        requestGetWeather()
+    }
+    
+    private func requestGetWeather() {
         let service = CurrentWeatherServiceImpl()
         service.getCurrentWeather(byCityName: "Moscow") { (weather, error) in
             
             if error == nil {
                 guard let weather = weather else { return }
                 
-                self.temperatureLabel.text = "\(weather.temperature)"
+                self.temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) ℃"
                 self.weatherLabel.text = "\(weather.description!)"
                 self.windLabel.text = "\(weather.wind!.speed) м/c -> \(weather.wind!.degree)"
                 self.pressureLabel.text = "\(weather.pressure) мм рт.ст."
@@ -50,10 +57,16 @@ class CurrentWeatherViewController: UIViewController {
             } else {
                 self.showErrorBanner(message: error!.localizedDescription, position: .top)
             }
+            
+            self.refreshControl.endRefreshing()
         }
     }
 
-    // MARK: - IBActions
+    // MARK: - Actions
+    
+    @objc private func actionRefreshWeather() {
+        requestGetWeather()
+    }
     
     @IBAction func actionDidTapRegionItem(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)

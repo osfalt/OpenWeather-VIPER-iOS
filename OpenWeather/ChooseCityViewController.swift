@@ -25,9 +25,11 @@ class ChooseCityViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func actionDidTapAddCityButton(_ sender: UIButton) {
-        cities.append(cityTextField.text!)
-        cityTextField.text = nil
-        tableView.reloadData()
+        if !cityTextField.text!.isEmpty {
+            cities.append(cityTextField.text!)
+            cityTextField.text = ""
+            tableView.reloadData()
+        }
     }
 }
 
