@@ -22,8 +22,17 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var sunriseTimeLabel: UILabel!
     @IBOutlet weak var sunsetTimeLabel: UILabel!
     
+    var refreshControl: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let service = CurrentWeatherServiceImpl()
         service.getCurrentWeather(byCityName: "Moscow") { (weather, error) in
@@ -44,4 +53,10 @@ class CurrentWeatherViewController: UIViewController {
         }
     }
 
+    // MARK: - IBActions
+    
+    @IBAction func actionDidTapRegionItem(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)
+    }
+    
 }

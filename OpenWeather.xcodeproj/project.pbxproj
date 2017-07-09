@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3130576E1F1264E9006331AB /* disclosure_indicator_bold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3130576D1F1264E9006331AB /* disclosure_indicator_bold@2x.png */; };
+		313057711F1279F3006331AB /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313057701F1279F3006331AB /* ChooseCityViewController.swift */; };
 		31349E6A1F10DA5A0018B87C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31349E691F10DA5A0018B87C /* BaseService.swift */; };
 		313E7F3B1F113D9E0088721F /* disclosure_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 319B4A041F111DF2006D5927 /* disclosure_indicator@3x.png */; };
 		315259BC1F10E64E00C4190E /* GetCurrentWeatherByCityNameOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315259BB1F10E64E00C4190E /* GetCurrentWeatherByCityNameOperation.swift */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		04EE79CE8A73518611B8F7F9 /* Pods-OpenWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenWeatherTests/Pods-OpenWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0FAEFEA154E72754406E138C /* Pods_OpenWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3130576D1F1264E9006331AB /* disclosure_indicator_bold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure_indicator_bold@2x.png"; sourceTree = "<group>"; };
+		313057701F1279F3006331AB /* ChooseCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
 		31349E691F10DA5A0018B87C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		315259BB1F10E64E00C4190E /* GetCurrentWeatherByCityNameOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherByCityNameOperation.swift; sourceTree = "<group>"; };
 		315259BD1F10E67800C4190E /* CurrentWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherService.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				315259B41F10E2BD00C4190E /* CurrentWeather */,
+				3130576F1F1279CC006331AB /* ChooseCity */,
 				319B49FE1F111B4D006D5927 /* Forecast */,
 				319B49FF1F111B5C006D5927 /* WeatherMap */,
 			);
@@ -151,8 +156,25 @@
 				315289B11F104A7C00EDB2FD /* ic_plain_flat_02d.png */,
 				315289B51F104D3300EDB2FD /* ru.png */,
 				319B4A041F111DF2006D5927 /* disclosure_indicator@3x.png */,
+				3130576D1F1264E9006331AB /* disclosure_indicator_bold@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		3130576F1F1279CC006331AB /* ChooseCity */ = {
+			isa = PBXGroup;
+			children = (
+				313057721F1285CB006331AB /* View */,
+			);
+			name = ChooseCity;
+			sourceTree = "<group>";
+		};
+		313057721F1285CB006331AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				313057701F1279F3006331AB /* ChooseCityViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		31349E661F10D7460018B87C /* ServiceLayer */ = {
@@ -501,6 +523,7 @@
 				315289B21F104A8500EDB2FD /* ic_plain_flat_02d.png in Resources */,
 				316736F01F10244B00D554D7 /* Assets.xcassets in Resources */,
 				315289A81F1036FF00EDB2FD /* calendar@2x.png in Resources */,
+				3130576E1F1264E9006331AB /* disclosure_indicator_bold@2x.png in Resources */,
 				315289AE1F10495A00EDB2FD /* compass_arrow.png in Resources */,
 				315289AA1F10370400EDB2FD /* partly_cloudy@2x.png in Resources */,
 				315289B61F104D3B00EDB2FD /* ru.png in Resources */,
@@ -621,6 +644,7 @@
 				31DC9EAA1F112C730087E4C2 /* HighlightedView.swift in Sources */,
 				31E06AED1F10FF5100A9E174 /* Constant.swift in Sources */,
 				31E06AF01F10FFC900A9E174 /* UIColor+Extension.swift in Sources */,
+				313057711F1279F3006331AB /* ChooseCityViewController.swift in Sources */,
 				31E06AEB1F10FF2B00A9E174 /* UIViewController+Extension.swift in Sources */,
 				316737111F102A8E00D554D7 /* WeatherMapViewController.swift in Sources */,
 				315259BC1F10E64E00C4190E /* GetCurrentWeatherByCityNameOperation.swift in Sources */,

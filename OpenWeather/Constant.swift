@@ -11,8 +11,16 @@ import Foundation
 struct Constant {
     
     struct ViewTag {
-        public static let infoBanner = 111
-        public static let errorBanner = 112
+        static let infoBanner = 111
+        static let errorBanner = 112
+    }
+    
+    struct Segue {
+        static let showChooseCityVC = "showChooseCityVC"
+    }
+    
+    struct CellIdentifier {
+        static let cityCell = "cityCell"
     }
     
 }

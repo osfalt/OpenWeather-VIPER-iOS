@@ -16,7 +16,11 @@ struct CurrentWeather: Mappable {
     var temperatureMin = 0.0
     var temperatureMax = 0.0
     var wind: Wind?
-    var pressure = 0
+    var pressure = 0 {
+        didSet {
+            pressure = Int(Double(pressure) * 0.75006375541921)
+        }
+    }
     var humidity = 0
     var sunrise: Date?
     var sunset: Date?

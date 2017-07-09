@@ -134,11 +134,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-J5-mj5">
-                                                <rect key="frame" x="331" y="15" width="16" height="16"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_indicator_bold.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-J5-mj5">
+                                                <rect key="frame" x="335" y="17" width="12" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iAV-J5-mj5" secondAttribute="height" multiplier="1:1" id="0ST-2n-mcW"/>
-                                                    <constraint firstAttribute="width" constant="16" id="ahN-84-KSv"/>
+                                                    <constraint firstAttribute="width" constant="12" id="ahN-84-KSv"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49r-rU-BMr" userLabel="Divider View">
@@ -162,6 +162,9 @@
                                             <constraint firstItem="aWK-E7-sFK" firstAttribute="leading" secondItem="ocB-HY-joh" secondAttribute="trailing" constant="16" id="o69-hg-M59"/>
                                             <constraint firstAttribute="height" constant="46" id="wrP-2e-Syh"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0tE-On-HkJ" appends="YES" id="oTR-oo-Id0"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Температура" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saj-bT-CJ1">
                                         <rect key="frame" x="16" y="62" width="106.5" height="21"/>
@@ -365,11 +368,100 @@
                         <outlet property="weatherLabel" destination="yjg-D5-cgu" id="8cF-wD-JgJ"/>
                         <outlet property="windArrowImageView" destination="lJf-W5-kM9" id="Yhe-EH-ZnL"/>
                         <outlet property="windLabel" destination="NWh-j1-qSo" id="eDn-gE-gUU"/>
+                        <segue destination="OaG-7d-ssz" kind="show" identifier="showChooseCityVC" id="wTq-hw-Y44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPY-dN-88R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0tE-On-HkJ">
+                    <connections>
+                        <action selector="actionDidTapRegionItem:" destination="6EU-rz-FIG" id="Eiv-0h-Fwo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1592.8" y="-1035.832083958021"/>
+        </scene>
+        <!--Город-->
+        <scene sceneID="KuL-cx-k1T">
+            <objects>
+                <viewController title="Город" id="OaG-7d-ssz" customClass="ChooseCityViewController" customModule="OpenWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="spj-Vm-5ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Kw-O3-bfx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ISx-jl-SXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-dZ-oLy" userLabel="New City View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите город" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0o-4l-L4y">
+                                        <rect key="frame" x="16" y="10" width="258" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-Ka-PpX">
+                                        <rect key="frame" x="290" y="10" width="69" height="30"/>
+                                        <state key="normal" title="Добавить"/>
+                                        <connections>
+                                            <action selector="actionDidTapAddCityButton:" destination="OaG-7d-ssz" eventType="touchUpInside" id="VGT-Tp-y76"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="U3U-Ka-PpX" firstAttribute="leading" secondItem="D0o-4l-L4y" secondAttribute="trailing" constant="16" id="Euy-yJ-dX9"/>
+                                    <constraint firstItem="D0o-4l-L4y" firstAttribute="leading" secondItem="WzJ-dZ-oLy" secondAttribute="leading" constant="16" id="Jq0-zm-PAI"/>
+                                    <constraint firstAttribute="height" constant="50" id="Kvz-F9-iRf"/>
+                                    <constraint firstItem="D0o-4l-L4y" firstAttribute="centerY" secondItem="WzJ-dZ-oLy" secondAttribute="centerY" id="WsB-DC-umj"/>
+                                    <constraint firstItem="U3U-Ka-PpX" firstAttribute="centerY" secondItem="WzJ-dZ-oLy" secondAttribute="centerY" id="fpJ-7Y-49d"/>
+                                    <constraint firstAttribute="trailing" secondItem="U3U-Ka-PpX" secondAttribute="trailing" constant="16" id="qrb-cV-I7q"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qV5-Bu-J3t">
+                                <rect key="frame" x="0.0" y="114" width="375" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" textLabel="aF5-fQ-bdu" style="IBUITableViewCellStyleDefault" id="Ytf-aU-JLy">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ytf-aU-JLy" id="KTs-mX-0bv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Название города" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aF5-fQ-bdu">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WzJ-dZ-oLy" firstAttribute="leading" secondItem="ISx-jl-SXs" secondAttribute="leading" id="Hgh-ly-GQa"/>
+                            <constraint firstItem="WzJ-dZ-oLy" firstAttribute="top" secondItem="spj-Vm-5ux" secondAttribute="bottom" id="Wel-kv-jaf"/>
+                            <constraint firstItem="2Kw-O3-bfx" firstAttribute="top" secondItem="qV5-Bu-J3t" secondAttribute="bottom" id="ecG-s0-Z9Q"/>
+                            <constraint firstAttribute="trailing" secondItem="WzJ-dZ-oLy" secondAttribute="trailing" id="iPF-QV-UMM"/>
+                            <constraint firstItem="qV5-Bu-J3t" firstAttribute="leading" secondItem="ISx-jl-SXs" secondAttribute="leading" id="mdm-l8-l4m"/>
+                            <constraint firstAttribute="trailing" secondItem="qV5-Bu-J3t" secondAttribute="trailing" id="nrs-Rx-J04"/>
+                            <constraint firstItem="qV5-Bu-J3t" firstAttribute="top" secondItem="WzJ-dZ-oLy" secondAttribute="bottom" id="ufE-Z1-vv0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="D0o-4l-L4y" id="h1H-mh-O6a"/>
+                        <outlet property="tableView" destination="qV5-Bu-J3t" id="J4P-SC-4Cc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="His-CB-4dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="-1036"/>
         </scene>
         <!--Погода сейчас-->
         <scene sceneID="ICH-rL-kLh">
@@ -429,7 +521,7 @@
     <resources>
         <image name="calendar.png" width="25" height="25"/>
         <image name="compass_arrow.png" width="150" height="150"/>
-        <image name="disclosure_indicator.png" width="16" height="16"/>
+        <image name="disclosure_indicator_bold.png" width="24" height="24"/>
         <image name="ic_plain_flat_02d.png" width="128" height="128"/>
         <image name="map.png" width="25" height="25"/>
         <image name="partly_cloudy.png" width="30" height="30"/>
