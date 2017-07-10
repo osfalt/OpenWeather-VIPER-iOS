@@ -15,6 +15,7 @@ PODS:
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
+  - ViperMcFlurry (1.5.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - SDWebImage
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
+  - ViperMcFlurry
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -38,7 +40,8 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
+  ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
 
-PODFILE CHECKSUM: 75dbe76d62979dac0c3beee2fafa042b56e184e8
+PODFILE CHECKSUM: 52f9a0b2e8242d27e54377093d14fbd2ce52572f
 
 COCOAPODS: 1.2.1

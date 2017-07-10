@@ -15,6 +15,7 @@ protocol CurrentWeatherViewInput: class {
     
     func showLoadingIndicator()
     func hideLoadingIndicator()
+    func setupRegionView(withRegion: Region)
     func setupView(withCurrentWeather: CurrentWeather)
     func showError(_ error: ApiError)
     

@@ -14,7 +14,7 @@
         <scene sceneID="Yq7-yK-h9h">
             <objects>
                 <navigationController id="G7Q-Qt-mJk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Прогноз погоды" image="calendar.png" id="8lf-oo-04Z"/>
+                    <tabBarItem key="tabBarItem" title="Прогноз погоды" image="TabWeatherForecast" id="8lf-oo-04Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9XS-w6-g2o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -124,20 +124,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyD-dZ-7Fn" userLabel="Region View" customClass="HighlightedView" customModule="OpenWeather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ru.png" translatesAutoresizingMaskIntoConstraints="NO" id="ocB-HY-joh" userLabel="Flag Image View">
-                                                        <rect key="frame" x="16" y="10.5" width="40" height="25"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ocB-HY-joh" userLabel="Flag Image View">
+                                                        <rect key="frame" x="16" y="12" width="36" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="25" id="AHe-3E-exx"/>
-                                                            <constraint firstAttribute="width" constant="40" id="Lrd-Kd-i0c"/>
+                                                            <constraint firstAttribute="height" constant="22" id="AHe-3E-exx"/>
+                                                            <constraint firstAttribute="width" constant="36" id="Lrd-Kd-i0c"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Москва" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-E7-sFK">
-                                                        <rect key="frame" x="72" y="12" width="61" height="21"/>
+                                                        <rect key="frame" x="68" y="12" width="274" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure_indicator_bold.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-J5-mj5">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-J5-mj5">
                                                         <rect key="frame" x="350" y="16.5" width="13" height="13"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iAV-J5-mj5" secondAttribute="height" multiplier="1:1" id="0ST-2n-mcW"/>
@@ -158,6 +158,7 @@
                                                     <constraint firstItem="ocB-HY-joh" firstAttribute="centerY" secondItem="zyD-dZ-7Fn" secondAttribute="centerY" id="9P4-Ui-wmC"/>
                                                     <constraint firstAttribute="bottom" secondItem="49r-rU-BMr" secondAttribute="bottom" id="ADB-e7-vRK"/>
                                                     <constraint firstAttribute="trailing" secondItem="49r-rU-BMr" secondAttribute="trailing" id="FaX-gd-oEN"/>
+                                                    <constraint firstItem="iAV-J5-mj5" firstAttribute="leading" secondItem="aWK-E7-sFK" secondAttribute="trailing" constant="8" id="OsE-bF-Om6"/>
                                                     <constraint firstItem="iAV-J5-mj5" firstAttribute="centerY" secondItem="zyD-dZ-7Fn" secondAttribute="centerY" id="TxQ-ld-hCM"/>
                                                     <constraint firstAttribute="trailing" secondItem="iAV-J5-mj5" secondAttribute="trailing" constant="12" id="cSO-nz-3MR"/>
                                                     <constraint firstItem="aWK-E7-sFK" firstAttribute="centerY" secondItem="zyD-dZ-7Fn" secondAttribute="centerY" id="jdb-mL-36v"/>
@@ -181,7 +182,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plain_flat_02d.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-S9-sBf" userLabel="Weather Image View">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-S9-sBf" userLabel="Weather Image View">
                                                 <rect key="frame" x="16" y="95" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="d6E-2E-ILi"/>
@@ -224,7 +225,7 @@
                                                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-W5-kM9" userLabel="Arrow Image View">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WindvaneArrow" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-W5-kM9" userLabel="Arrow Image View">
                                                                 <rect key="frame" x="5" y="5" width="80" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="lJf-W5-kM9" secondAttribute="height" multiplier="1:1" id="OA0-1h-ZrG"/>
@@ -481,7 +482,7 @@
         <scene sceneID="ICH-rL-kLh">
             <objects>
                 <navigationController id="XBZ-8e-QBd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Погода сейчас" image="partly_cloudy.png" id="8kG-Gb-4qX"/>
+                    <tabBarItem key="tabBarItem" title="Погода сейчас" image="TabWeatherNow" id="8kG-Gb-4qX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QH1-6C-Sbh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -518,7 +519,7 @@
         <scene sceneID="aGZ-qY-JRd">
             <objects>
                 <navigationController id="jwS-nM-KQU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Карта погоды" image="map.png" id="3iF-VD-G9o"/>
+                    <tabBarItem key="tabBarItem" title="Карта погоды" image="TabWeatherMap" id="3iF-VD-G9o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vqz-is-PAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -533,12 +534,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.png" width="25" height="25"/>
-        <image name="compass_arrow.png" width="150" height="150"/>
-        <image name="disclosure_indicator_bold.png" width="24" height="24"/>
-        <image name="ic_plain_flat_02d.png" width="128" height="128"/>
-        <image name="map.png" width="25" height="25"/>
-        <image name="partly_cloudy.png" width="30" height="30"/>
-        <image name="ru.png" width="100" height="67"/>
+        <image name="DisclosureIndicator" width="24" height="24"/>
+        <image name="TabWeatherForecast" width="25" height="25"/>
+        <image name="TabWeatherMap" width="25" height="25"/>
+        <image name="TabWeatherNow" width="30" height="30"/>
+        <image name="WindvaneArrow" width="150" height="150"/>
     </resources>
 </document>

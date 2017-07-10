@@ -74,7 +74,7 @@ class CurrentWeatherAssembly {
     private func registerCurrentWeatherRouter() {
         container.register(CurrentWeatherRouter.self) { (resolver) -> CurrentWeatherRouter in
             let router = CurrentWeatherRouter()
-            router.currentWeatherVC = self.currentWeatherVC
+//            router.currentWeatherVC = self.currentWeatherVC
             return router
         }
     }

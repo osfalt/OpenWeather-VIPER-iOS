@@ -10,7 +10,11 @@ import ObjectMapper
 
 struct CurrentWeather: Mappable {
     
-    var description: String?
+    var description: String? {
+        didSet {
+            description = description?.capitalized
+        }
+    }
     var iconID: String?
     var temperature = 0.0
     var temperatureMin = 0.0
@@ -24,6 +28,7 @@ struct CurrentWeather: Mappable {
     var humidity = 0
     var sunrise: Date?
     var sunset: Date?
+    var countryCode: String?
     
     init?(map: Map) {
         mapping(map: map)
@@ -40,5 +45,6 @@ struct CurrentWeather: Mappable {
         humidity <- map["main.humidity"]
         sunrise <- (map["sys.sunrise"], DateTransform())
         sunset <- (map["sys.sunset"], DateTransform())
+        countryCode <- map["sys.country"]
     }
 }

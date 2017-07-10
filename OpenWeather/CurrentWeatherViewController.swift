@@ -26,30 +26,29 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
     var refreshControl: UIRefreshControl!
     var output: CurrentWeatherViewOutput!
     private var dateFormatter: DateFormatter!
-    var region: Region?
+//    var region: Region?
     
     // MARK: - Ovverides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupDateFormatter()
         setupRefreshControl()
-        output.didRefreshWeather()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        output.didRefreshWeather()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if segue.identifier == Constant.Segue.showChooseCityVC {
-            let chooseCityVC = segue.destination as! ChooseCityViewController
-            chooseCityVC.region = region
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if segue.identifier == Constant.Segue.showChooseCityVC {
+//            let chooseCityVC = segue.destination as! ChooseCityViewController
+//            chooseCityVC.region = region
+//        }
+//    }
     
     // MARK: - Setup Components
     
@@ -85,8 +84,14 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
         refreshControl.endRefreshing()
     }
     
+    func setupRegionView(withRegion region: Region) {
+        regionLabel.text = region.localizedCityName
+    }
+    
     func setupView(withCurrentWeather weather: CurrentWeather) {
+        flagImageView.image = UIImage(named: weather.countryCode?.lowercased() ?? "")
         temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) ℃"
+        weatherImageView.image = UIImage(named: weather.iconID!)
         weatherLabel.text = "\(weather.description!)"
         windLabel.text = "\(weather.wind!.speed) м/c, \(weather.wind!.direction)"
         pressureLabel.text = "\(weather.pressure) мм рт.ст."
@@ -97,7 +102,7 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
         // wind direction
         let radians = (CGFloat(weather.wind!.degree - 180) * CGFloat.pi) / 180
         let rotatedTransform = self.windArrowImageView.transform.rotated(by: radians)
-        UIView.animate(withDuration: 1.2, delay: 0.2, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 1.2, delay: 0, options: [.curveEaseOut], animations: {
             self.windArrowImageView.transform = rotatedTransform
         })
     }

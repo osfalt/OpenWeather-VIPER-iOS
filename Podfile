@@ -12,6 +12,7 @@ target 'OpenWeather' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'BRYXBanner'
+    pod 'ViperMcFlurry'
 end
 
 # Pods for testing
@@ -25,4 +26,5 @@ target 'OpenWeatherTests' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'BRYXBanner'
+    pod 'ViperMcFlurry'
 end

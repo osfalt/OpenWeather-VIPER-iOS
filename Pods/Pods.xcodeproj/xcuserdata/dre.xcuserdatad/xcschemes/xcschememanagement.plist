@@ -54,30 +54,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ViperMcFlurry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01F3D6D723A61B9F29E7505ACE554A67</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0A9EAAAB5140A6CA2590FA8D82C84952</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0F3B36547C3C2CC3060475E614BCBF32</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1D50E231296B80F642C90C075662A2F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2818D7D6973DBF0D8145B11770DB9C02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37A22E95A8A8D9E2A39CA71B9DF9E76F</key>
+		<key>304B60A5FD77CE622AB943E686FFEB9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62A3880696FAB2CD7C117A8F709004B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>721F0EFA7B7C61A939936440364F2685</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8FF5B918D821EB5AE5FB7D2647F5BC77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>946F5145F00CF5BA376FA33CE35531B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9502FB01641FBABB78522037E882757B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F82B50F15583E4EE334E65682DA7F8A9</key>
+		<key>A3C5449DEF975772814F95C044FCD731</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD449E091EAAAAB0D18A7747FB688534</key>
 		<dict>
 			<key>primary</key>
 			<true/>
