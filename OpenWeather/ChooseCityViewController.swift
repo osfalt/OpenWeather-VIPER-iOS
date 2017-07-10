@@ -38,7 +38,9 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     
     // MARK: - ChooseCityViewInput
     
-    
+    func showRegionInTextField(_ region: Region) {
+        cityTextField.text = region.cityName!
+    }
 }
 
 extension ChooseCityViewController: UITableViewDataSource, UITableViewDelegate {

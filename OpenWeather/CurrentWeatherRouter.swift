@@ -15,15 +15,18 @@ import ViperMcFlurry
 class CurrentWeatherRouter: CurrentWeatherRouterInput {
     
 //    weak var currentWeatherVC: CurrentWeatherViewController!
-    var transitionHandler: RamblerViperModuleTransitionHandlerProtocol?
+    var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
     
     func openChooseCityModule(withRegion region: Region) {
 //        currentWeatherVC.region = region
 //        currentWeatherVC.performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)
         
-//        transitionHandler?.openModule!(usingSegue: Constant.Segue.showChooseCityVC).thenChain({ (moduleInput) -> RamblerViperModuleOutput? in
-//            moduleInput.
-//        })
+        transitionHandler.openModule!(usingSegue: Constant.Segue.showChooseCityVC)
+            .thenChain { (moduleInput) -> RamblerViperModuleOutput? in
+                let chooseCityModuleInput = moduleInput as! ChooseCityModuleInput
+                chooseCityModuleInput.configureCurrentModule(withRegion: region)
+                return nil
+            }
     }
     
     func closeCurrentModule() {

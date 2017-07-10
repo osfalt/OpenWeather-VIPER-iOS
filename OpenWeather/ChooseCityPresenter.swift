@@ -17,7 +17,7 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     // MARK: - ChooseCityModuleInput
     
     func configureCurrentModule(withRegion region: Region) {
-        
+        view.showRegionInTextField(region)
     }
     
     // MARK: - ChooseCityInteractorOutput

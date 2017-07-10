@@ -10,4 +10,6 @@ import Foundation
 
 protocol ChooseCityViewInput: class {
     
+    func showRegionInTextField(_ region: Region)
+    
 }
