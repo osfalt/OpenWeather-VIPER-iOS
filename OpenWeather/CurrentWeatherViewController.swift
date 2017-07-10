@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWeatherViewController: UIViewController {
+class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var flagImageView: UIImageView!
@@ -22,7 +22,9 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var sunriseTimeLabel: UILabel!
     @IBOutlet weak var sunsetTimeLabel: UILabel!
+    
     var refreshControl: UIRefreshControl!
+    var output: CurrentWeatherViewOutput!
     
     private var dateFormatter: DateFormatter!
     
@@ -79,11 +81,29 @@ class CurrentWeatherViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func actionRefreshWeather() {
+        output.didRefreshWeather()
+        
         requestGetWeather()
     }
     
     @IBAction func actionDidTapRegionItem(_ sender: UITapGestureRecognizer) {
+        output.didTapRegionItem()
+        
         performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)
     }
     
+    // MARK: - CurrentWeatherViewInput
+    
+    
+    func showLoadingIndicator() {
+        
+    }
+    
+    func hideLoadingIndicator() {
+        
+    }
+    
+    func setupView(withCurrentWeather: CurrentWeather) {
+        
+    }
 }

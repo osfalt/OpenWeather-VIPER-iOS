@@ -12,6 +12,9 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - Swinject (2.0.0)
+  - SwinjectStoryboard (1.0.0):
+    - Swinject (= 2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -21,6 +24,8 @@ DEPENDENCIES:
   - Fabric
   - Reqres
   - SDWebImage
+  - Swinject (~> 2.0.0)
+  - SwinjectStoryboard (~> 1.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -31,7 +36,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Reqres: 7027a575c1539c9635ff11ecf04d49cdf30a2f0a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
+  SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
 
-PODFILE CHECKSUM: b6a3d9a8e8c989d4e50d2915a7af3fd2489a71cd
+PODFILE CHECKSUM: 75dbe76d62979dac0c3beee2fafa042b56e184e8
 
 COCOAPODS: 1.2.1
