@@ -1,2 +1,2 @@
 # OpenWeather-iOS
-This application is on Swift using the VIPER architecture
+This application is a test project written in Swift using the VIPER architecture.
