@@ -57,14 +57,14 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
                 
                 self.temperatureLabel.text = "\(String(format: "%.0f", weather.temperature)) ℃"
                 self.weatherLabel.text = "\(weather.description!)"
-                self.windLabel.text = "\(weather.wind!.speed) м/c"
+                self.windLabel.text = "\(weather.wind!.speed) м/c, \(weather.wind!.direction)"
                 self.pressureLabel.text = "\(weather.pressure) мм рт.ст."
                 self.humidityLabel.text = "\(weather.humidity) %"
                 self.sunriseTimeLabel.text = "\(self.dateFormatter.string(from: weather.sunrise!))"
                 self.sunsetTimeLabel.text = "\(self.dateFormatter.string(from: weather.sunset!))"
                 
                 // wind direction
-                let radians = (CGFloat(weather.wind!.degree) * CGFloat.pi) / 180
+                let radians = (CGFloat(weather.wind!.degree - 180) * CGFloat.pi) / 180
                 let rotatedTransform = self.windArrowImageView.transform.rotated(by: radians)
                 UIView.animate(withDuration: 1.2, delay: 0.2, options: [.curveEaseOut], animations: {
                     self.windArrowImageView.transform = rotatedTransform

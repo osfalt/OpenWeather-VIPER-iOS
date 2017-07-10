@@ -18,6 +18,9 @@ extension SwinjectStoryboard {
     }
 }
 
+/**
+ Отвечает за сборку данного модуля.
+ **/
 class CurrentWeatherAssembly {
     
     private let container: Container
@@ -35,18 +38,43 @@ class CurrentWeatherAssembly {
     }
     
     private func registerCurrentWeatherView() {
-
+        container.storyboardInitCompleted(CurrentWeatherViewController.self) { (resolver, controller) in
+            self.currentWeatherVC = controller
+            controller.output = resolver.resolve(CurrentWeatherViewOutput.self)
+        }
     }
     
     private func registerCurrentWeatherInteractor() {
-
+        container.register(CurrentWeatherInteractorInput.self) { _ in CurrentWeatherInteractor() }
+            .initCompleted { (resolver, interactor) in
+                let interactor = interactor as! CurrentWeatherInteractor
+                interactor.output = resolver.resolve(CurrentWeatherInteractorOutput.self)
+                interactor.currentWeatherService = resolver.resolve(CurrentWeatherService.self)
+        }
     }
     
     private func registerCurrentWeatherPresenter() {
-
+        container.register(CurrentWeatherViewOutput.self) { (resolver) -> CurrentWeatherViewOutput in
+            resolver.resolve(CurrentWeatherPresenter.self)!
+        }
+        
+        container.register(CurrentWeatherInteractorOutput.self) { (resolver) -> CurrentWeatherInteractorOutput in
+            resolver.resolve(CurrentWeatherPresenter.self)!
+        }
+        
+        container.register(CurrentWeatherPresenter.self) { (resolver) -> CurrentWeatherPresenter in
+            let presenter = CurrentWeatherPresenter()
+            presenter.interactor = resolver.resolve(CurrentWeatherInteractorInput.self)!
+            presenter.router = resolver.resolve(CurrentWeatherRouter.self)!
+            presenter.view = self.currentWeatherVC
+            return presenter
+        }
     }
     
     private func registerCurrentWeatherRouter() {
-
+        container.register(CurrentWeatherRouter.self) { (resolver) -> CurrentWeatherRouter in
+            let router = CurrentWeatherRouter()
+            return router
+        }
     }
 }

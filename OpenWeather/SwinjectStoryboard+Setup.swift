@@ -17,8 +17,18 @@ extension SwinjectStoryboard {
     }
     
     static func setup() {
+        registerServices()
+        
         // сборка VIPER-модулей
         setupCurrentWeatherAssembly()
     }
     
+    // MARK: - Services Registration
+    
+    private class func registerServices() {
+        // CurrentWeatherService
+        container.register(CurrentWeatherService.self) { resolver in
+            CurrentWeatherServiceImpl()
+        }
+    }
 }

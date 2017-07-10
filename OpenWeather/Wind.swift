@@ -12,6 +12,30 @@ struct Wind: Mappable {
     
     var speed = 0
     var degree = 0
+    var direction: String {
+        switch degree {
+        case 0..<23:
+            return "С"
+        case 338..<360:
+            return "С"
+        case 23..<68:
+            return "СВ"
+        case 68..<113:
+            return "В"
+        case 113..<158:
+            return "ЮВ"
+        case 158..<203:
+            return "Ю"
+        case 203..<248:
+            return "ЮЗ"
+        case 248..<293:
+            return "З"
+        case 293..<338:
+            return "СЗ"
+        default:
+            return ""
+        }
+    }
     
     init?(map: Map) {
         mapping(map: map)
