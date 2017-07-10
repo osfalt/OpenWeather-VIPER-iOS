@@ -1,5 +1,5 @@
 //
-//  Region.swift
+//  ChooseCityInteractorOutput.swift
 //  OpenWeather
 //
 //  Created by Andrey Sidorovnin on 10.07.17.
@@ -8,10 +8,8 @@
 
 import Foundation
 
-struct Region {
+protocol ChooseCityInteractorOutput: class {
     
-    var id = 0
-    var cityName: String?
-    var regionCode: String?
+//    func didObtainRegionList(_ regions: [Region])
     
 }

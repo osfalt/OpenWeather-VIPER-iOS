@@ -42,10 +42,10 @@ class CurrentWeatherPresenter: NSObject, CurrentWeatherModuleInput, CurrentWeath
     // MARK: - CurrentWeatherViewOutput
     
     func didRefreshWeather() {
-        interactor.obtainCurrentWeather(byCityName: "Уральск")
+        interactor.obtainCurrentWeather(byCityName: "Москва")
     }
     
     func didTapRegionItem() {
-        router.openChooseCityModule(withRegion: Region(id: 0, localizedCityName: "Москва", cityName: "Moscow", regionCode: "RU"))
+        router.openChooseCityModule(withRegion: Region(id: 0, cityName: "Москва", regionCode: "RU"))
     }
 }

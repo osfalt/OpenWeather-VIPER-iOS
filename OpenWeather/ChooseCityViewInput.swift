@@ -1,5 +1,5 @@
 //
-//  Region.swift
+//  ChooseCityViewInput.swift
 //  OpenWeather
 //
 //  Created by Andrey Sidorovnin on 10.07.17.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct Region {
-    
-    var id = 0
-    var cityName: String?
-    var regionCode: String?
+protocol ChooseCityViewInput: class {
     
 }

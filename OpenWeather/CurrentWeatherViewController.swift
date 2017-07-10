@@ -85,7 +85,7 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
     }
     
     func setupRegionView(withRegion region: Region) {
-        regionLabel.text = region.localizedCityName
+        regionLabel.text = region.cityName
     }
     
     func setupView(withCurrentWeather weather: CurrentWeather) {
