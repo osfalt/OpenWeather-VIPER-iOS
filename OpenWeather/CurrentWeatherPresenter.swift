@@ -19,23 +19,30 @@ class CurrentWeatherPresenter: CurrentWeatherInteractorOutput, CurrentWeatherVie
     
     // MARK: - CurrentWeatherInteractorOutput
     
-
     func willLoadCurrentWeather() {
         view.showLoadingIndicator()
     }
     
-    func didLoadCurrentWeather(_ currentWeather: CurrentWeather) {
+    func didLoadCurrentWeatherWithSuccess(_ currentWeather: CurrentWeather) {
         view.hideLoadingIndicator()
         view.setupView(withCurrentWeather: currentWeather)
     }
 
+    func didLoadCurrentWeatherWithError(_ error: ApiError) {
+        view.showError(error)
+    }
+    
     // MARK: - CurrentWeatherViewOutput
     
+//    func didTriggerViewDidLoadEvent() {
+//        
+//    }
+    
     func didRefreshWeather() {
-        interactor.obtainCurrentWeather()
+        interactor.obtainCurrentWeather(byCityName: "Moscow")
     }
     
     func didTapRegionItem() {
-        router.openChooseCityModule()
+        router.openChooseCityModule(withRegion: Region(id: 0, localizedCityName: "Москва", cityName: "Moscow", regionCode: "RU"))
     }
 }

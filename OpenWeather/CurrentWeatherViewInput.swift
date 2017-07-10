@@ -16,5 +16,6 @@ protocol CurrentWeatherViewInput: class {
     func showLoadingIndicator()
     func hideLoadingIndicator()
     func setupView(withCurrentWeather: CurrentWeather)
+    func showError(_ error: ApiError)
     
 }

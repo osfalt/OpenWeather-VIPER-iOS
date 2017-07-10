@@ -13,11 +13,13 @@ class ChooseCityViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var cities = ["Москва"]
+    var region: Region!
+    fileprivate var cities = [Region]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cities.append(region)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -26,7 +28,7 @@ class ChooseCityViewController: UIViewController {
     
     @IBAction func actionDidTapAddCityButton(_ sender: UIButton) {
         if !cityTextField.text!.isEmpty {
-            cities.append(cityTextField.text!)
+            cities.append(Region(id: 0, localizedCityName: cityTextField.text!, cityName: "", regionCode: ""))
             cityTextField.text = ""
             tableView.reloadData()
         }
@@ -45,7 +47,7 @@ extension ChooseCityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.cityCell, for: indexPath)
-        cell.textLabel?.text = cities[indexPath.row]
+        cell.textLabel?.text = cities[indexPath.row].localizedCityName
         return cell
     }
     

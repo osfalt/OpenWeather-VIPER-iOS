@@ -13,8 +13,11 @@ import Foundation
  **/
 class CurrentWeatherRouter: CurrentWeatherRouterInput {
     
-    func openChooseCityModule() {
-        print("openChooseCityModule()")
+    weak var currentWeatherVC: CurrentWeatherViewController!
+    
+    func openChooseCityModule(withRegion region: Region) {
+        currentWeatherVC.region = region
+        currentWeatherVC.performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)
     }
     
     func closeCurrentModule() {

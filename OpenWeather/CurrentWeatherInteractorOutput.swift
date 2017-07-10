@@ -14,6 +14,7 @@ import Foundation
 protocol CurrentWeatherInteractorOutput: class {
     
     func willLoadCurrentWeather()
-    func didLoadCurrentWeather(_ currentWeather: CurrentWeather)
+    func didLoadCurrentWeatherWithSuccess(_ currentWeather: CurrentWeather)
+    func didLoadCurrentWeatherWithError(_ error: ApiError)
     
 }

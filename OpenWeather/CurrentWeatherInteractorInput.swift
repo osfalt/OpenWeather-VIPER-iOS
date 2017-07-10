@@ -13,6 +13,6 @@ import Foundation
  **/
 protocol CurrentWeatherInteractorInput: class {
     
-    func obtainCurrentWeather()
+    func obtainCurrentWeather(byCityName cityName: String)
     
 }

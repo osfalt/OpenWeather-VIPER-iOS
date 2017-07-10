@@ -18,15 +18,17 @@ class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
     
     // MARK: - CurrentWeatherInteractorInput
     
-    func obtainCurrentWeather() {
-        currentWeatherService.getCurrentWeather(byCityName: "Moscow") { [weak self] (weather, error) in
+    func obtainCurrentWeather(byCityName cityName: String) {
+        output.willLoadCurrentWeather()
+        
+        currentWeatherService.getCurrentWeather(byCityName: cityName) { [weak self] (weather, error) in
             guard let strongSelf = self else { return }
             
             if error == nil {
-                guard let weather = weather else { return }
-                strongSelf.output.didLoadCurrentWeather(weather)
+                guard let currentWeather = weather else { return }
+                strongSelf.output.didLoadCurrentWeatherWithSuccess(currentWeather)
             } else {
-                
+                strongSelf.output.didLoadCurrentWeatherWithError(error!)
             }
 
         }

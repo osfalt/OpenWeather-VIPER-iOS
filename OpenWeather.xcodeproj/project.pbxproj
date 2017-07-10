@@ -26,6 +26,7 @@
 		315289AE1F10495A00EDB2FD /* compass_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289AD1F10495100EDB2FD /* compass_arrow.png */; };
 		315289B21F104A8500EDB2FD /* ic_plain_flat_02d.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289B11F104A7C00EDB2FD /* ic_plain_flat_02d.png */; };
 		315289B61F104D3B00EDB2FD /* ru.png in Resources */ = {isa = PBXBuildFile; fileRef = 315289B51F104D3300EDB2FD /* ru.png */; };
+		3154D5361F1395D000784E52 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3154D5351F1395D000784E52 /* Region.swift */; };
 		316736E61F10244B00D554D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316736E51F10244B00D554D7 /* AppDelegate.swift */; };
 		316736EB1F10244B00D554D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316736E91F10244B00D554D7 /* Main.storyboard */; };
 		316736EE1F10244B00D554D7 /* OpenWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 316736EC1F10244B00D554D7 /* OpenWeather.xcdatamodeld */; };
@@ -84,6 +85,7 @@
 		315289AD1F10495100EDB2FD /* compass_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass_arrow.png; sourceTree = "<group>"; };
 		315289B11F104A7C00EDB2FD /* ic_plain_flat_02d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_plain_flat_02d.png; sourceTree = "<group>"; };
 		315289B51F104D3300EDB2FD /* ru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ru.png; sourceTree = "<group>"; };
+		3154D5351F1395D000784E52 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		316736E21F10244B00D554D7 /* OpenWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316736E51F10244B00D554D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		316736EA1F10244B00D554D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			children = (
 				317FF3F51F10EFBC00ACE87E /* CurrentWeather.swift */,
 				317FF3F91F10F3DF00ACE87E /* Wind.swift */,
+				3154D5351F1395D000784E52 /* Region.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				316736EE1F10244B00D554D7 /* OpenWeather.xcdatamodeld in Sources */,
 				3149862A1F13764200611D5C /* SwinjectStoryboard+Setup.swift in Sources */,
 				31FFC17F1F13786D00E2A09A /* CurrentWeatherViewInput.swift in Sources */,
+				3154D5361F1395D000784E52 /* Region.swift in Sources */,
 				31FFC17B1F1377FC00E2A09A /* CurrentWeatherRouter.swift in Sources */,
 				3167370D1F1026E600D554D7 /* ForecastViewController.swift in Sources */,
 				315259C51F10E88E00C4190E /* ApiConfig.swift in Sources */,

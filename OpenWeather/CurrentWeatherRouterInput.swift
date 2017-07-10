@@ -13,7 +13,7 @@ import Foundation
  **/
 protocol CurrentWeatherRouterInput: class {
     
-    func openChooseCityModule()
+    func openChooseCityModule(withRegion: Region)
     func closeCurrentModule()
     
 }
