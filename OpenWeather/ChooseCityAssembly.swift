@@ -6,31 +6,18 @@
 //  Copyright © 2017 Dre. All rights reserved.
 //
 
-import Foundation
 import Swinject
 import SwinjectStoryboard
-
-extension SwinjectStoryboard {
-    
-    class func setupChooseCityAssembly() {
-        let chooseCityAssembly = ChooseCityAssembly(container: container)
-        chooseCityAssembly.setup()
-    }
-}
 
 /**
  Отвечает за сборку данного модуля.
  **/
-class ChooseCityAssembly {
+class ChooseCityAssembly: Assembly {
     
-    private let container: Container
-    private weak var chooseCityVC: ChooseCityViewController!
+    private var container: Container!
     
-    init(container: Container) {
+    func assemble(container: Container) {
         self.container = container
-    }
-    
-    func setup() {
         registerChooseCityView()
         registerChooseCityInteractor()
         registerChooseCityPresenter()
@@ -39,40 +26,32 @@ class ChooseCityAssembly {
     
     private func registerChooseCityView() {
         container.storyboardInitCompleted(ChooseCityViewController.self) { (resolver, controller) in
-            self.chooseCityVC = controller
-            controller.output = resolver.resolve(ChooseCityViewOutput.self)
+            controller.output = resolver.resolve(ChooseCityViewOutput.self, argument: controller)
         }
     }
     
     private func registerChooseCityInteractor() {
-        container.register(ChooseCityInteractorInput.self) { _ in ChooseCityInteractor() }
-            .initCompleted { (resolver, interactor) in
-                let interactor = interactor as! ChooseCityInteractor
-                interactor.output = resolver.resolve(ChooseCityInteractorOutput.self)
+        container.register(ChooseCityInteractorInput.self) { (resolver, presenter: ChooseCityPresenter) in
+            let interactor = ChooseCityInteractor()
+            interactor.output = presenter
+            return interactor
         }
     }
     
     private func registerChooseCityPresenter() {
-        container.register(ChooseCityViewOutput.self) { (resolver) -> ChooseCityViewOutput in
-            resolver.resolve(ChooseCityPresenter.self)!
-        }
-        
-        container.register(ChooseCityInteractorOutput.self) { (resolver) -> ChooseCityInteractorOutput in
-            resolver.resolve(ChooseCityPresenter.self)!
-        }
-        
-        container.register(ChooseCityPresenter.self) { (resolver) -> ChooseCityPresenter in
+        container.register(ChooseCityPresenter.self) { (resolver, controller: ChooseCityViewController) in
             let presenter = ChooseCityPresenter()
-            presenter.interactor = resolver.resolve(ChooseCityInteractorInput.self)!
-            presenter.router = resolver.resolve(ChooseCityRouter.self)!
-            presenter.view = self.chooseCityVC
+            presenter.interactor = resolver.resolve(ChooseCityInteractorInput.self, argument: presenter)
+            presenter.router = resolver.resolve(ChooseCityRouter.self, argument: controller)
+            presenter.view = controller
             return presenter
         }
     }
     
     private func registerChooseCityRouter() {
-        container.register(ChooseCityRouter.self) { (resolver) -> ChooseCityRouter in
+        container.register(ChooseCityRouter.self) { (resolver, controller: ChooseCityViewController) in
             let router = ChooseCityRouter()
+            router.transitionHandler = controller
             return router
         }
     }

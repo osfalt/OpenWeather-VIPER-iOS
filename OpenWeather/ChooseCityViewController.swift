@@ -15,7 +15,7 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     
     var region: Region!
     fileprivate var cities = [Region]()
-    var output: ChooseCityViewOutput!
+    dynamic var output: ChooseCityViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,7 +27,17 @@ DEPENDENCIES:
   - SDWebImage
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
-  - ViperMcFlurry
+  - ViperMcFlurry (from `https://github.com/rambler-digital-solutions/ViperMcFlurry.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  ViperMcFlurry:
+    :branch: master
+    :git: https://github.com/rambler-digital-solutions/ViperMcFlurry.git
+
+CHECKOUT OPTIONS:
+  ViperMcFlurry:
+    :commit: 1591905d980bb3525b5172d21fc629de25034609
+    :git: https://github.com/rambler-digital-solutions/ViperMcFlurry.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -42,6 +52,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
 
-PODFILE CHECKSUM: 52f9a0b2e8242d27e54377093d14fbd2ce52572f
+PODFILE CHECKSUM: a69d2855f1684ec2c6bea9e359cc071788779c7c
 
 COCOAPODS: 1.2.1

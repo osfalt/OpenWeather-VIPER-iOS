@@ -7,28 +7,28 @@
 //
 
 import Foundation
-import Swinject
-import SwinjectStoryboard
-
-extension SwinjectStoryboard {
-    
-    static var container: Container {
-        return defaultContainer
-    }
-    
-    static func setup() {
-        registerServices()
-        
-        // сборка VIPER-модулей
-        setupCurrentWeatherAssembly()
-    }
-    
-    // MARK: - Services Registration
-    
-    private class func registerServices() {
-        // CurrentWeatherService
-        container.register(CurrentWeatherService.self) { resolver in
-            CurrentWeatherServiceImpl()
-        }
-    }
-}
+//import Swinject
+//import SwinjectStoryboard
+//
+//extension SwinjectStoryboard {
+//    
+//    static var container: Container {
+//        return defaultContainer
+//    }
+//    
+//    static func setup() {
+//        registerServices()
+//        
+//        // сборка VIPER-модулей
+//        setupCurrentWeatherAssembly()
+//    }
+//    
+//    // MARK: - Services Registration
+//    
+//    private class func registerServices() {
+//        // CurrentWeatherService
+//        container.register(CurrentWeatherService.self) { resolver in
+//            CurrentWeatherServiceImpl()
+//        }
+//    }
+//}

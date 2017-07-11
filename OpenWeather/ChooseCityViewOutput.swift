@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ChooseCityViewOutput: class {
+@objc protocol ChooseCityViewOutput: NSObjectProtocol {
     
     func didTapAddCityButton(withCityName: String)
 }
