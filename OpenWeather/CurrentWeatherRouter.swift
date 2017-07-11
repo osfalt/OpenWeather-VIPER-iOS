@@ -14,12 +14,9 @@ import ViperMcFlurry
  **/
 class CurrentWeatherRouter: CurrentWeatherRouterInput {
     
-//    weak var currentWeatherVC: CurrentWeatherViewController!
     var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
     
     func openChooseCityModule(withRegion region: Region) {
-//        currentWeatherVC.region = region
-//        currentWeatherVC.performSegue(withIdentifier: Constant.Segue.showChooseCityVC, sender: self)
         
         transitionHandler.openModule!(usingSegue: Constant.Segue.showChooseCityVC)
             .thenChain { (moduleInput) -> RamblerViperModuleOutput? in

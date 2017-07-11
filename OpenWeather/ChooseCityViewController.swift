@@ -13,14 +13,12 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var region: Region!
     fileprivate var cities = [Region]()
     dynamic var output: ChooseCityViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cities.append(region)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -40,6 +38,7 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     
     func showRegionInTextField(_ region: Region) {
         cityTextField.text = region.cityName!
+        cities.append(region)
     }
 }
 
