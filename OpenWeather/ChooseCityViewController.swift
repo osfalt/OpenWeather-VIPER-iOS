@@ -18,6 +18,7 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.didTriggerViewDidLoadEvent()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -38,7 +39,9 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     
     func showRegionInTextField(_ region: Region) {
         cityTextField.text = region.cityName!
+        
         cities.append(region)
+        tableView.reloadData()
     }
 }
 

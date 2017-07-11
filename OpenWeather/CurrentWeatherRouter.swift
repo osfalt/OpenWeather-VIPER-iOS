@@ -14,11 +14,15 @@ import ViperMcFlurry
  **/
 class CurrentWeatherRouter: CurrentWeatherRouterInput {
     
+    struct SegueId {
+        static let chooseCityModuleSegue = "chooseCityModuleSegue"
+    }
+    
     var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
     
     func openChooseCityModule(withRegion region: Region) {
         
-        transitionHandler.openModule!(usingSegue: Constant.Segue.showChooseCityVC)
+        transitionHandler.openModule!(usingSegue: SegueId.chooseCityModuleSegue)
             .thenChain { (moduleInput) -> RamblerViperModuleOutput? in
                 let chooseCityModuleInput = moduleInput as! ChooseCityModuleInput
                 chooseCityModuleInput.configureCurrentModule(withRegion: region)

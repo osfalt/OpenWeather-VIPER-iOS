@@ -26,7 +26,6 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
     var refreshControl: UIRefreshControl!
     var output: CurrentWeatherViewOutput!
     private var dateFormatter: DateFormatter!
-//    var region: Region?
     
     // MARK: - Ovverides
     
@@ -40,15 +39,6 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
         super.viewWillAppear(animated)
         output.didRefreshWeather()
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        super.prepare(for: segue, sender: sender)
-//        
-//        if segue.identifier == Constant.Segue.showChooseCityVC {
-//            let chooseCityVC = segue.destination as! ChooseCityViewController
-//            chooseCityVC.region = region
-//        }
-//    }
     
     // MARK: - Setup Components
     

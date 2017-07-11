@@ -14,10 +14,12 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     var router: ChooseCityRouterInput!
     var interactor: ChooseCityInteractorInput!
     
+    private var region: Region!
+    
     // MARK: - ChooseCityModuleInput
     
     func configureCurrentModule(withRegion region: Region) {
-//        view.showRegionInTextField(region)
+        self.region = region
     }
     
     // MARK: - ChooseCityInteractorOutput
@@ -25,6 +27,10 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     
     
     // MARK: - ChooseCityViewOutput
+    
+    func didTriggerViewDidLoadEvent() {
+        view.showRegionInTextField(region)
+    }
     
     func didTapAddCityButton(withCityName: String) {
         

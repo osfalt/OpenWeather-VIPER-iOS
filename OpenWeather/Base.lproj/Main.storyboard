@@ -383,7 +383,7 @@
                         <outlet property="weatherLabel" destination="yjg-D5-cgu" id="8cF-wD-JgJ"/>
                         <outlet property="windArrowImageView" destination="lJf-W5-kM9" id="Yhe-EH-ZnL"/>
                         <outlet property="windLabel" destination="NWh-j1-qSo" id="eDn-gE-gUU"/>
-                        <segue destination="OaG-7d-ssz" kind="show" identifier="showChooseCityVC" id="wTq-hw-Y44"/>
+                        <segue destination="OaG-7d-ssz" kind="show" identifier="chooseCityModuleSegue" id="wTq-hw-Y44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPY-dN-88R" userLabel="First Responder" sceneMemberID="firstResponder"/>

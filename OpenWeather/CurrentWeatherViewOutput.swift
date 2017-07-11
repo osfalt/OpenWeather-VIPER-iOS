@@ -14,7 +14,6 @@ import Foundation
  **/
 protocol CurrentWeatherViewOutput: class {
  
-//    func didTriggerViewDidLoadEvent()
     func didRefreshWeather()
     func didTapRegionItem()
     

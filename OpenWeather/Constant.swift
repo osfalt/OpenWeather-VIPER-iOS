@@ -15,10 +15,6 @@ struct Constant {
         static let errorBanner = 112
     }
     
-    struct Segue {
-        static let showChooseCityVC = "showChooseCityVC"
-    }
-    
     struct CellIdentifier {
         static let cityCell = "cityCell"
     }
