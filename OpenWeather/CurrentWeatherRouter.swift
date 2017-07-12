@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ViperMcFlurry
+import LightRoute
 
 /**
  Отвечает за навигацию между модулями.
@@ -15,19 +15,15 @@ import ViperMcFlurry
 class CurrentWeatherRouter: CurrentWeatherRouterInput {
     
     struct SegueId {
-        static let chooseCityModuleSegue = "chooseCityModuleSegue"
+        static let chooseCityModule = "chooseCityModuleSegue"
     }
     
-    var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
+    weak var transitionHandler: TransitionHandler!
     
     func openChooseCityModule(withRegion region: Region) {
-        
-        transitionHandler.openModule!(usingSegue: SegueId.chooseCityModuleSegue)
-            .thenChain { (moduleInput) -> RamblerViperModuleOutput? in
-                let chooseCityModuleInput = moduleInput as! ChooseCityModuleInput
-                chooseCityModuleInput.configureCurrentModule(withRegion: region)
-                return nil
-            }
+        transitionHandler.forSegue(identifier: SegueId.chooseCityModule, to: ChooseCityModuleInput.self) { (chooseCityModuleInput) in
+            chooseCityModuleInput.configureCurrentModule(withRegion: region)
+        }
     }
     
     func closeCurrentModule() {

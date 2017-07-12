@@ -10,6 +10,5 @@ import Foundation
 
 protocol ChooseCityRouterInput {
     
-    func openCurrentWeatherModule(withRegion: Region)
-    func closeCurrentModule()
+    func closeCurrentModule(withRegion: Region)
 }

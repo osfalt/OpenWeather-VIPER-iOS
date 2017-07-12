@@ -13,7 +13,7 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    dynamic var output: ChooseCityViewOutput!
+    var output: ChooseCityViewOutput!
     var dataDisplayManager: ChooseCityDataDisplayManager!
     
     // MARK: - Lifecycle
@@ -38,14 +38,17 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
         tableView.delegate = dataDisplayManager.delegate(forTableView: tableView)
     }
     
+    func updateView(withRegions regions: [Region]) {
+        dataDisplayManager.configureDataDisplayManager(withRegions: regions)
+        tableView.reloadData()
+    }
+    
     // MARK: - Actions
     
     @IBAction func actionDidTapAddCityButton(_ sender: UIButton) {
         if !cityTextField.text!.isEmpty {
-//            cities.append(Region(id: 0, cityName: cityTextField.text!, regionCode: ""))
-//            output.didTapAddCityButton(withCityName: cityTextField.text!)
-//            cityTextField.text = ""
-//            tableView.reloadData()
+            output.didTapAddCityButton(withCityName: cityTextField.text!)
+            cityTextField.text = ""
         }
     }
 }
@@ -55,7 +58,7 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
 extension ChooseCityViewController: ChooseCityDataDisplayManagerDelegate {
     
     func didTapCityCell(withRegion region: Region) {
-//        output.didTapCityCell(withRegion: region)
+        output.didTapCityCell(withRegion: region)
     }
 
 }

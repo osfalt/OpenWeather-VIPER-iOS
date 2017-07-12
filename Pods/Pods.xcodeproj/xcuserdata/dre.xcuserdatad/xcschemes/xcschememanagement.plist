@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LightRoute.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ViperMcFlurry.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -72,17 +72,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>304B60A5FD77CE622AB943E686FFEB9D</key>
+		<key>406B32C175EA1A0F857E218CA198A026</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62A3880696FAB2CD7C117A8F709004B9</key>
+		<key>50B6789D13A80635EDAC6DCB54D87212</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>721F0EFA7B7C61A939936440364F2685</key>
+		<key>5AA9B4F424052D90A90D477E1F385B16</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E0835492129549C541177CE1DD16ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F94DAF83B492D60F718DB9E5A1CDE57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>860A6E1CB90A4E3C986286172AD8557E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,27 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FF5B918D821EB5AE5FB7D2647F5BC77</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>946F5145F00CF5BA376FA33CE35531B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9502FB01641FBABB78522037E882757B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3C5449DEF975772814F95C044FCD731</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD449E091EAAAAB0D18A7747FB688534</key>
+		<key>E5FC339151E0E0B36A17DBB9B5AC9617</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,7 @@ target 'OpenWeather' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'BRYXBanner'
-    pod 'ViperMcFlurry', :git => 'https://github.com/rambler-digital-solutions/ViperMcFlurry.git', :branch => 'master'
+    pod 'LightRoute'
 end
 
 # Pods for testing
@@ -26,5 +26,5 @@ target 'OpenWeatherTests' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'BRYXBanner'
-    pod 'ViperMcFlurry', :git => 'https://github.com/rambler-digital-solutions/ViperMcFlurry.git', :branch => 'master'
+    pod 'LightRoute'
 end

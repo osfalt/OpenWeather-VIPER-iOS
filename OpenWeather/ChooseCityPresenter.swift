@@ -24,19 +24,21 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     
     // MARK: - ChooseCityInteractorOutput
     
-    
+    func didAddedNewCity() {
+        view.updateView(withRegions: interactor.obtainCityList(sortedByRegion: region))
+    }
     
     // MARK: - ChooseCityViewOutput
     
     func didTriggerViewDidLoadEvent() {
-        view.configureView(withRegions: interactor.obtainRegionList(sortedByRegion: region))
+        view.configureView(withRegions: interactor.obtainCityList(sortedByRegion: region))
     }
     
-    func didTapAddCityButton(withCityName: String) {
-        
+    func didTapAddCityButton(withCityName cityName: String) {
+        interactor.addNewCity(name: cityName)
     }
     
-//    func didTapCityCell(withRegion region: Region) {
-//        
-//    }
+    func didTapCityCell(withRegion region: Region) {
+        router.closeCurrentModule(withRegion: region)
+    }
 }

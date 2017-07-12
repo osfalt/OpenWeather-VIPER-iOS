@@ -9,7 +9,7 @@
 import UIKit
 
 class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var regionLabel: UILabel!

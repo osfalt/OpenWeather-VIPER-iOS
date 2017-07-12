@@ -7,18 +7,14 @@
 //
 
 import Foundation
-import ViperMcFlurry
+import LightRoute
 
 class ChooseCityRouter: ChooseCityRouterInput {
     
-    var transitionHandler: RamblerViperModuleTransitionHandlerProtocol?
+    var transitionHandler: TransitionHandler?
     
-    func openCurrentWeatherModule(withRegion: Region) {
-        
-    }
-    
-    func closeCurrentModule() {
-        print("closeCurrentModule()")
+    func closeCurrentModule(withRegion region: Region) {
+        print("closeCurrentModule withRegion: \(region)")
     }
     
 }

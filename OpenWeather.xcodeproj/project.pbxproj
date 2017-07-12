@@ -85,7 +85,6 @@
 		315259C01F10E73800C4190E /* CurrentWeatherServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherServiceImpl.swift; sourceTree = "<group>"; };
 		315259C41F10E88E00C4190E /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		3154D5351F1395D000784E52 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
-		3154D7811F13B9A300784E52 /* OpenWeather-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenWeather-Bridging-Header.h"; sourceTree = "<group>"; };
 		3154D7831F13BCE200784E52 /* CurrentWeatherModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModuleInput.swift; sourceTree = "<group>"; };
 		3154D7851F13BFD100784E52 /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		3154D7871F13C27C00784E52 /* WeatherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeatherIcons.xcassets; sourceTree = "<group>"; };
@@ -158,7 +157,7 @@
 		311CE3B91F103382000C7EB0 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				31E2B80B1F165BCF0087760D /* Protocols */,
+				31E2B80E1F1678D50087760D /* Common */,
 				311CE3BA1F103386000C7EB0 /* Modules */,
 			);
 			name = VIPER;
@@ -379,7 +378,6 @@
 				316736E91F10244B00D554D7 /* Main.storyboard */,
 				316736F11F10244B00D554D7 /* LaunchScreen.storyboard */,
 				316736F41F10244B00D554D7 /* Info.plist */,
-				3154D7811F13B9A300784E52 /* OpenWeather-Bridging-Header.h */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -484,6 +482,14 @@
 				31E2B80C1F165BE90087760D /* DataDisplayManager.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		31E2B80E1F1678D50087760D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				31E2B80B1F165BCF0087760D /* Protocols */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		31E3FA761F13C8C0005E663C /* Assembly */ = {
@@ -942,7 +948,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenWeather/OpenWeather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -958,7 +964,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osfalt.OpenWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenWeather/OpenWeather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

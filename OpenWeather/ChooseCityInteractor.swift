@@ -12,11 +12,21 @@ class ChooseCityInteractor: ChooseCityInteractorInput {
     
     weak var output: ChooseCityInteractorOutput!
     
+    private var regions = [Region(id: 0, cityName: "Москва", regionCode: "RU"),
+                           Region(id: 1, cityName: "Санкт-Петербург", regionCode: "RU"),
+                           Region(id: 2, cityName: "Обнинск", regionCode: "RU")]
+    
     // MARK: - ChooseCityInteractorInput
     
-    func obtainRegionList(sortedByRegion region: Region) -> [Region] {
-        return [region,
-                Region(id: 1, cityName: "Санкт-Петербург", regionCode: "RU"),
-                Region(id: 2, cityName: "Обнинск", regionCode: "RU")]
+    func obtainCityList(sortedByRegion region: Region) -> [Region] {
+        regions.sort { (region1, region2) -> Bool in
+            return region1.cityName! < region2.cityName!
+        }
+        return regions
+    }
+    
+    func addNewCity(name: String) {
+        regions.append(Region(id: 0, cityName: name, regionCode: ""))
+        output.didAddedNewCity()
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 protocol ChooseCityInteractorOutput: class {
     
-//    func didObtainRegionList(_ regions: [Region])
+    func didAddedNewCity()
     
 }

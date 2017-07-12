@@ -10,6 +10,7 @@ import Foundation
 
 protocol ChooseCityInteractorInput: class {
     
-    func obtainRegionList(sortedByRegion: Region) -> [Region]
+    func obtainCityList(sortedByRegion: Region) -> [Region]
+    func addNewCity(name: String)
     
 }

@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import ViperMcFlurry
 
-protocol ChooseCityModuleInput: RamblerViperModuleInput {
+protocol ChooseCityModuleInput: class {
     
     func configureCurrentModule(withRegion region: Region)
     

@@ -7,6 +7,7 @@ PODS:
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
+  - LightRoute (1.0.6)
   - ObjectMapper (2.2.7)
   - Reqres (2.0.0)
   - SDWebImage (4.0.0):
@@ -15,7 +16,6 @@ PODS:
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
-  - ViperMcFlurry (1.5.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -23,21 +23,11 @@ DEPENDENCIES:
   - BRYXBanner
   - Crashlytics
   - Fabric
+  - LightRoute
   - Reqres
   - SDWebImage
   - Swinject (~> 2.0.0)
   - SwinjectStoryboard (~> 1.0.0)
-  - ViperMcFlurry (from `https://github.com/rambler-digital-solutions/ViperMcFlurry.git`, branch `master`)
-
-EXTERNAL SOURCES:
-  ViperMcFlurry:
-    :branch: master
-    :git: https://github.com/rambler-digital-solutions/ViperMcFlurry.git
-
-CHECKOUT OPTIONS:
-  ViperMcFlurry:
-    :commit: 1591905d980bb3525b5172d21fc629de25034609
-    :git: https://github.com/rambler-digital-solutions/ViperMcFlurry.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -45,13 +35,13 @@ SPEC CHECKSUMS:
   BRYXBanner: bd26a91cb8a5826a8bc7687891043d287dd3ee53
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  LightRoute: 22e06952478cba8c9898c992994777832c23a5cb
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Reqres: 7027a575c1539c9635ff11ecf04d49cdf30a2f0a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
-  ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
 
-PODFILE CHECKSUM: a69d2855f1684ec2c6bea9e359cc071788779c7c
+PODFILE CHECKSUM: dee3fea71052d4c703036bf09eda50919be286eb
 
 COCOAPODS: 1.2.1

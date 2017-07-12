@@ -8,9 +8,9 @@
 
 import Foundation
 
-@objc protocol ChooseCityViewOutput: class {
+protocol ChooseCityViewOutput: class {
     
     func didTriggerViewDidLoadEvent()
     func didTapAddCityButton(withCityName: String)
-//    func didTapCityCell(withRegion region: Region)
+    func didTapCityCell(withRegion region: Region)
 }

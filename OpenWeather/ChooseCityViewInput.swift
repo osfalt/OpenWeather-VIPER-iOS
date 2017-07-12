@@ -11,5 +11,6 @@ import Foundation
 protocol ChooseCityViewInput: class {
     
     func configureView(withRegions regions: [Region])
+    func updateView(withRegions regions: [Region])
     
 }

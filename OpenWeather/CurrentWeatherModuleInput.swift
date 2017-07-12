@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import ViperMcFlurry
 
-protocol CurrentWeatherModuleInput: RamblerViperModuleInput {
+protocol CurrentWeatherModuleInput: class {
     
     func configureCurrentModule(withRegion region: Region)
     
