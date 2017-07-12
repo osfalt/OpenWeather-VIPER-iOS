@@ -25,8 +25,8 @@ class CurrentWeatherServiceImpl: BaseService, CurrentWeatherService {
     }
     
     func getCurrentWeather(byCityID: String,
-                           completion: ((_ currentWeather: CurrentWeather?, _ error: ApiError?) -> Void)?) {
+                           completion: ((_ currentWeather: CurrentWeather?, _ error: ApiError?) -> Void)?) throws {
         
-        
+        throw ServiceError.methodNotImplemented
     }
 }

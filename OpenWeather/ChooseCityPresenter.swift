@@ -23,7 +23,7 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     }
     
     // MARK: - ChooseCityInteractorOutput
- 
+    
     
     
     // MARK: - ChooseCityViewOutput

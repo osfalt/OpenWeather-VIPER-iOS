@@ -14,6 +14,6 @@ protocol CurrentWeatherService {
                            completion: ((_ currentWeather: CurrentWeather?, _ error: ApiError?) -> Void)?)
     
     func getCurrentWeather(byCityID: String,
-                           completion: ((_ currentWeather: CurrentWeather?, _ error: ApiError?) -> Void)?)
+                           completion: ((_ currentWeather: CurrentWeather?, _ error: ApiError?) -> Void)?) throws
     
 }

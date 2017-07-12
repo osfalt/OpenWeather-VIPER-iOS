@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum ServiceError: Error {
+    case methodNotImplemented
+}
+
 class BaseService {
     
     private var appDelegate = UIApplication.shared.delegate as! AppDelegate
