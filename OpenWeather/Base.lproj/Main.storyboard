@@ -472,6 +472,7 @@
                     <connections>
                         <outlet property="cityTextField" destination="D0o-4l-L4y" id="h1H-mh-O6a"/>
                         <outlet property="tableView" destination="qV5-Bu-J3t" id="J4P-SC-4Cc"/>
+                        <segue destination="6EU-rz-FIG" kind="custom" identifier="chooseCityModulePopSegue" customClass="ChooseCityModulePopSegue" customModule="OpenWeather" customModuleProvider="target" id="dng-oA-Be8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="His-CB-4dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,4 +541,7 @@
         <image name="TabWeatherNow" width="30" height="30"/>
         <image name="WindvaneArrow" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dng-oA-Be8"/>
+    </inferredMetricsTieBreakers>
 </document>

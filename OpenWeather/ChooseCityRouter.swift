@@ -11,10 +11,16 @@ import LightRoute
 
 class ChooseCityRouter: ChooseCityRouterInput {
     
-    var transitionHandler: TransitionHandler?
+    struct SegueId {
+        static let chooseCityModulePop = "chooseCityModulePopSegue"
+    }
+    
+    weak var transitionHandler: TransitionHandler!
     
     func closeCurrentModule(withRegion region: Region) {
-        print("closeCurrentModule withRegion: \(region)")
+        transitionHandler.forSegue(identifier: SegueId.chooseCityModulePop, to: CurrentWeatherModuleInput.self) { (currentWeatherModuleInput) in
+            currentWeatherModuleInput.configureCurrentModule(withRegion: region)
+        }
     }
     
 }
