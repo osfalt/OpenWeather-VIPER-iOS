@@ -12,4 +12,5 @@ import Foundation
     
     func didTriggerViewDidLoadEvent()
     func didTapAddCityButton(withCityName: String)
+//    func didTapCityCell(withRegion region: Region)
 }

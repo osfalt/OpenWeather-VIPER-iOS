@@ -14,8 +14,9 @@ class ChooseCityInteractor: ChooseCityInteractorInput {
     
     // MARK: - ChooseCityInteractorInput
     
-    func obtainRegionList(sortedByRegion: Region) -> [Region] {
-        return [Region(id: 0, cityName: "Москва", regionCode: "RU"),
-                Region(id: 1, cityName: "Санкт-Петербург", regionCode: "RU")]
+    func obtainRegionList(sortedByRegion region: Region) -> [Region] {
+        return [region,
+                Region(id: 1, cityName: "Санкт-Петербург", regionCode: "RU"),
+                Region(id: 2, cityName: "Обнинск", regionCode: "RU")]
     }
 }

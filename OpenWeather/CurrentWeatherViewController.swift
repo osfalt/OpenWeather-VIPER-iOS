@@ -27,7 +27,7 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
     var output: CurrentWeatherViewOutput!
     private var dateFormatter: DateFormatter!
     
-    // MARK: - Ovverides
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

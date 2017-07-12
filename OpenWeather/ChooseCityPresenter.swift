@@ -29,11 +29,14 @@ class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractor
     // MARK: - ChooseCityViewOutput
     
     func didTriggerViewDidLoadEvent() {
-        view.showRegionInTextField(region)
+        view.configureView(withRegions: interactor.obtainRegionList(sortedByRegion: region))
     }
     
     func didTapAddCityButton(withCityName: String) {
         
     }
     
+//    func didTapCityCell(withRegion region: Region) {
+//        
+//    }
 }

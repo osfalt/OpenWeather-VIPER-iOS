@@ -40,6 +40,8 @@
 		31E06AF21F1108AD00A9E174 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E06AF11F1108AD00A9E174 /* ResponseHandler.swift */; };
 		31E18A831F14EAC700974C1F /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E18A821F14EAC700974C1F /* ApplicationAssembly.swift */; };
 		31E2B8071F163CB50087760D /* CurrentWeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2B8061F163CB50087760D /* CurrentWeatherServiceTests.swift */; };
+		31E2B80A1F165AF50087760D /* ChooseCityDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2B8091F165AF50087760D /* ChooseCityDataDisplayManager.swift */; };
+		31E2B80D1F165BE90087760D /* DataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2B80C1F165BE90087760D /* DataDisplayManager.swift */; };
 		31E3FA7B1F13C979005E663C /* ChooseCityAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA7A1F13C979005E663C /* ChooseCityAssembly.swift */; };
 		31E3FA7D1F13CA81005E663C /* ChooseCityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA7C1F13CA81005E663C /* ChooseCityInteractor.swift */; };
 		31E3FA7F1F13CA9A005E663C /* ChooseCityInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA7E1F13CA9A005E663C /* ChooseCityInteractorInput.swift */; };
@@ -110,6 +112,8 @@
 		31E06AF11F1108AD00A9E174 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		31E18A821F14EAC700974C1F /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		31E2B8061F163CB50087760D /* CurrentWeatherServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherServiceTests.swift; sourceTree = "<group>"; };
+		31E2B8091F165AF50087760D /* ChooseCityDataDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityDataDisplayManager.swift; sourceTree = "<group>"; };
+		31E2B80C1F165BE90087760D /* DataDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDisplayManager.swift; sourceTree = "<group>"; };
 		31E3FA7A1F13C979005E663C /* ChooseCityAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityAssembly.swift; sourceTree = "<group>"; };
 		31E3FA7C1F13CA81005E663C /* ChooseCityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityInteractor.swift; sourceTree = "<group>"; };
 		31E3FA7E1F13CA9A005E663C /* ChooseCityInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityInteractorInput.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		311CE3B91F103382000C7EB0 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				31E2B80B1F165BCF0087760D /* Protocols */,
 				311CE3BA1F103386000C7EB0 /* Modules */,
 			);
 			name = VIPER;
@@ -203,6 +208,7 @@
 		313057721F1285CB006331AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31E2B8081F165AD40087760D /* DataDisplayManager */,
 				313057701F1279F3006331AB /* ChooseCityViewController.swift */,
 				31E3FA8A1F13CF72005E663C /* ChooseCityViewInput.swift */,
 				31E3FA8C1F13D02B005E663C /* ChooseCityViewOutput.swift */,
@@ -462,6 +468,22 @@
 				3154D5351F1395D000784E52 /* Region.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		31E2B8081F165AD40087760D /* DataDisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				31E2B8091F165AF50087760D /* ChooseCityDataDisplayManager.swift */,
+			);
+			name = DataDisplayManager;
+			sourceTree = "<group>";
+		};
+		31E2B80B1F165BCF0087760D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				31E2B80C1F165BE90087760D /* DataDisplayManager.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		31E3FA761F13C8C0005E663C /* Assembly */ = {
@@ -724,11 +746,13 @@
 			files = (
 				316736EE1F10244B00D554D7 /* OpenWeather.xcdatamodeld in Sources */,
 				31FFC17F1F13786D00E2A09A /* CurrentWeatherViewInput.swift in Sources */,
+				31E2B80D1F165BE90087760D /* DataDisplayManager.swift in Sources */,
 				3154D7841F13BCE200784E52 /* CurrentWeatherModuleInput.swift in Sources */,
 				3154D5361F1395D000784E52 /* Region.swift in Sources */,
 				31E3FA8D1F13D02B005E663C /* ChooseCityViewOutput.swift in Sources */,
 				31FFC17B1F1377FC00E2A09A /* CurrentWeatherRouter.swift in Sources */,
 				31E3FA8B1F13CF72005E663C /* ChooseCityViewInput.swift in Sources */,
+				31E2B80A1F165AF50087760D /* ChooseCityDataDisplayManager.swift in Sources */,
 				3167370D1F1026E600D554D7 /* ForecastViewController.swift in Sources */,
 				31E3FA7F1F13CA9A005E663C /* ChooseCityInteractorInput.swift in Sources */,
 				315259C51F10E88E00C4190E /* ApiConfig.swift in Sources */,

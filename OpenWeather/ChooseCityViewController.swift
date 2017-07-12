@@ -13,52 +13,49 @@ class ChooseCityViewController: UIViewController, ChooseCityViewInput {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var cities = [Region]()
     dynamic var output: ChooseCityViewOutput!
+    var dataDisplayManager: ChooseCityDataDisplayManager!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         output.didTriggerViewDidLoadEvent()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cityTextField.becomeFirstResponder()
     }
 
+    // MARK: - ChooseCityViewInput
+    
+    func configureView(withRegions regions: [Region]) {
+        dataDisplayManager.configureDataDisplayManager(withRegions: regions)
+        dataDisplayManager.delegate = self
+        
+        tableView.dataSource = dataDisplayManager.dataSource(forTableView: tableView)
+        tableView.delegate = dataDisplayManager.delegate(forTableView: tableView)
+    }
+    
     // MARK: - Actions
     
     @IBAction func actionDidTapAddCityButton(_ sender: UIButton) {
         if !cityTextField.text!.isEmpty {
-            cities.append(Region(id: 0, cityName: cityTextField.text!, regionCode: ""))
-            output.didTapAddCityButton(withCityName: cityTextField.text!)
-            cityTextField.text = ""
-            tableView.reloadData()
+//            cities.append(Region(id: 0, cityName: cityTextField.text!, regionCode: ""))
+//            output.didTapAddCityButton(withCityName: cityTextField.text!)
+//            cityTextField.text = ""
+//            tableView.reloadData()
         }
-    }
-    
-    // MARK: - ChooseCityViewInput
-    
-    func showRegionInTextField(_ region: Region) {
-        cityTextField.text = region.cityName!
-        
-        cities.append(region)
-        tableView.reloadData()
     }
 }
 
-extension ChooseCityViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - ChooseCityDataDisplayManagerDelegate
+
+extension ChooseCityViewController: ChooseCityDataDisplayManagerDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+    func didTapCityCell(withRegion region: Region) {
+//        output.didTapCityCell(withRegion: region)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.cityCell, for: indexPath)
-        cell.textLabel?.text = cities[indexPath.row].cityName
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.popViewController(animated: true)
-    }
+
 }

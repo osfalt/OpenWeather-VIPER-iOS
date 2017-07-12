@@ -27,6 +27,7 @@ class ChooseCityAssembly: Assembly {
     private func registerChooseCityView() {
         container.storyboardInitCompleted(ChooseCityViewController.self) { (resolver, controller) in
             controller.output = resolver.resolve(ChooseCityPresenter.self, argument: controller)
+            controller.dataDisplayManager = ChooseCityDataDisplayManager()
         }
     }
     
