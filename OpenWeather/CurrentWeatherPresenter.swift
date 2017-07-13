@@ -11,7 +11,7 @@ import Foundation
 /**
  Получает от View информацию о действиях пользователя и преображает ее в запросы к Роутеру, Интерактору, а также получает данные от Интерактора, подготавливает их и отправляет View для отображения.
  **/
-class CurrentWeatherPresenter: NSObject, CurrentWeatherModuleInput, CurrentWeatherInteractorOutput, CurrentWeatherViewOutput {
+class CurrentWeatherPresenter: CurrentWeatherModuleInput, CurrentWeatherInteractorOutput, CurrentWeatherViewOutput {
 
     weak var view: CurrentWeatherViewInput!
     var router: CurrentWeatherRouterInput!
@@ -20,6 +20,7 @@ class CurrentWeatherPresenter: NSObject, CurrentWeatherModuleInput, CurrentWeath
     // MARK: - CurrentWeatherModuleInput
     
     func configureCurrentModule(withRegion region: Region) {
+        interactor.updateCityName(region.cityName!)
         view.setupRegionView(withRegion: region)
     }
     
@@ -41,11 +42,15 @@ class CurrentWeatherPresenter: NSObject, CurrentWeatherModuleInput, CurrentWeath
     
     // MARK: - CurrentWeatherViewOutput
     
+    func didTriggerViewWillAppearEvent() {
+        didRefreshWeather()
+    }
+    
     func didRefreshWeather() {
-        interactor.obtainCurrentWeather(byCityName: "Москва")
+        interactor.obtainCurrentWeather(byCityName: interactor.obtainCurrentCityName())
     }
     
     func didTapRegionItem() {
-        router.openChooseCityModule(withRegion: Region(id: 0, cityName: "Москва", regionCode: "RU"))
+        router.openChooseCityModule(withRegion: Region(id: 0, cityName: interactor.obtainCurrentCityName(), regionCode: ""))
     }
 }

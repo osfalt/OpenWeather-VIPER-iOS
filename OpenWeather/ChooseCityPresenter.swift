@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChooseCityPresenter: NSObject, ChooseCityModuleInput, ChooseCityInteractorOutput, ChooseCityViewOutput {
+class ChooseCityPresenter: ChooseCityModuleInput, ChooseCityInteractorOutput, ChooseCityViewOutput {
     
     weak var view: ChooseCityViewInput!
     var router: ChooseCityRouterInput!

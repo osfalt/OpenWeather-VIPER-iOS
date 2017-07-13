@@ -37,7 +37,7 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output.didRefreshWeather()
+        output.didTriggerViewWillAppearEvent()
     }
     
     // MARK: - Setup Components

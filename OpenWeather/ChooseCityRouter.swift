@@ -11,16 +11,14 @@ import LightRoute
 
 class ChooseCityRouter: ChooseCityRouterInput {
     
-    struct SegueId {
-        static let chooseCityModulePop = "chooseCityModulePopSegue"
-    }
-    
     weak var transitionHandler: TransitionHandler!
     
     func closeCurrentModule(withRegion region: Region) {
-        transitionHandler.forSegue(identifier: SegueId.chooseCityModulePop, to: CurrentWeatherModuleInput.self) { (currentWeatherModuleInput) in
-            currentWeatherModuleInput.configureCurrentModule(withRegion: region)
-        }
+        guard let navigationController = (transitionHandler as! ChooseCityViewController).navigationController else { return }
+        navigationController.popViewController(animated: true)
+        
+        guard let currentWeatherViewController = navigationController.topViewController as? CurrentWeatherViewController else { return }
+        (currentWeatherViewController.output as! CurrentWeatherPresenter).configureCurrentModule(withRegion: region)
     }
     
 }

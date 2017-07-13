@@ -16,9 +16,21 @@ class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
     weak var output: CurrentWeatherInteractorOutput!
     var currentWeatherService: CurrentWeatherService!
     
+    private var cityName = "Москва"
+    
     // MARK: - CurrentWeatherInteractorInput
     
+    func updateCityName(_ cityName: String) {
+        self.cityName = cityName
+    }
+    
+    func obtainCurrentCityName() -> String {
+        return cityName
+    }
+    
     func obtainCurrentWeather(byCityName cityName: String) {
+        updateCityName(cityName)
+        
         output.willLoadCurrentWeather()
         
         currentWeatherService.getCurrentWeather(byCityName: cityName) { [weak self] (weather, error) in
